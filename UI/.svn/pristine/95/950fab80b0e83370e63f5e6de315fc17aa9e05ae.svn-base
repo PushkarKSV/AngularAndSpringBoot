@@ -1,0 +1,507 @@
+<div class="sidenav" style="color:primary">
+
+    <div style="display: inline-block;width: 30%; font-size: 17px;">
+        <label>Mandant </label>
+    </div>
+    <div style="display: inline-block; font-size: 17px;">
+        <select [(ngModel)]="selectedValue" (change)="onChange($event)">
+            <option *ngFor="let mandant of mandantList" [value]="mandant[1]">{{mandant[1]}}</option>
+        </select>
+
+    </div>
+
+    <br />
+    <hr />
+
+    <div [ngSwitch]="[selectedValue]">
+        <!--case:1 for BONDS CBB-->
+        <!-- <div *ngSwitchDefault style="color: white;"> -->
+        <div *ngSwitchCase="'Bonds CBB'" style="color: white;">
+            <a [routerLink] (click)="ShowTrade()"> Trade Analysis</a>
+            <div *ngIf="texttrade">
+                <ul *ngFor="let bond of BondsCBBTrade">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowStatistic()"> Statistics</a>
+            <div *ngIf="textstatistic">
+                <ul *ngFor="let bond of BondsCBBStatistic">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowAdministration()"> Administration</a>
+            <div *ngIf="textadministration">
+                <ul *ngFor="let bond of BondsCBBAdministration">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--case:1 for BOND EAA-->
+        <div *ngSwitchCase="'Bond EAA'" style="color: white;">
+            <a [routerLink] (click)="ShowTrade()"> Trade Analysis</a>
+            <div *ngIf="texttrade">
+                <ul *ngFor="let bond of BondEAATrade">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowStatistic()"> Statistics</a>
+            <div *ngIf="textstatistic">
+                <ul *ngFor="let bond of BondEAAStatistic">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowAdministration()"> Administration</a>
+            <div *ngIf="textadministration">
+                <ul *ngFor="let bond of BondEAAAdministration">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--case:2 for BOND PAG-->
+        <div *ngSwitchCase="'Bond PAG'" style="color: white;">
+            <a [routerLink] (click)="ShowTrade()"> Trade Analysis</a>
+            <div *ngIf="texttrade">
+                <ul *ngFor="let bond of BondPAGTrade">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowStatistic()"> Statistics</a>
+            <div *ngIf="textstatistic">
+                <ul *ngFor="let bond of BondPAGStatistic">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowAdministration()"> Administration</a>
+            <div *ngIf="textadministration">
+                <ul *ngFor="let bond of BondPAGAdministration">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--case:3 for Derivative EAA-->
+        <div *ngSwitchCase="'Derivate EAA'" style="color: white;">
+            <a [routerLink] (click)="ShowTrade()"> Trade Analysis</a>
+            <div *ngIf="texttrade">
+                <ul *ngFor="let bond of DerivativeEAATrade">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowStatistic()"> Statistics</a>
+            <div *ngIf="textstatistic">
+                <ul *ngFor="let bond of DerivativeEAAStatistic">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowAdministration()"> Administration</a>
+            <div *ngIf="textadministration">
+                <ul *ngFor="let bond of DerivativeEAAAdministration">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--case:4 for Derivative CBB-->
+        <div *ngSwitchCase="'Derivative CBB'" style="color: white;">
+            <a [routerLink] (click)="ShowTrade()"> Trade Analysis</a>
+            <div *ngIf="texttrade">
+                <ul *ngFor="let bond of DerivativeCBBTrade">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowStatistic()"> Statistics</a>
+            <div *ngIf="textstatistic">
+                <ul *ngFor="let bond of DerivativeCBBStatistic">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowAdministration()"> Administration</a>
+            <div *ngIf="textadministration">
+                <ul *ngFor="let bond of DerivativeCBBAdministration">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!--case:5 for Derivative PAG-->
+        <div *ngSwitchCase="'Derivative PAG'" style="color: white;">
+            <a [routerLink] (click)="ShowTrade()"> Trade Analysis</a>
+            <div *ngIf="texttrade">
+                <ul *ngFor="let bond of DerivativePAGTrade">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowStatistic()"> Statistics</a>
+            <div *ngIf="textstatistic">
+                <ul *ngFor="let bond of DerivativePAGStatistic">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowAdministration()"> Administration</a>
+            <div *ngIf="textadministration">
+                <ul *ngFor="let bond of DerivativePAGAdministration">
+                    <li>
+                        <p style="text-decoration: none;"><a [routerLink]="[bond.id]">{{bond.name}}</a></p>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!--case:6 for MoneyMarket EAA-->
+        <div *ngSwitchCase="'MoneyMarket EAA'" style="color: white;">
+            <a [routerLink] (click)="ShowTrade()"> Trade Analysis</a>
+            <div *ngIf="texttrade">
+                <ul *ngFor="let bond of MoneyMarketEAATrade">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowStatistic()"> Statistics</a>
+            <div *ngIf="textstatistic">
+                <ul *ngFor="let bond of MoneyMarketEAAStatistic">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowAdministration()"> Administration</a>
+            <div *ngIf="textadministration">
+                <ul *ngFor="let bond of MoneyMarketEAAAdministration">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--case:7 for MoneyMarket CBB-->
+        <div *ngSwitchCase="'MoneyMarket CBB'" style="color: white;">
+            <a [routerLink] (click)="ShowTrade()"> Trade Analysis</a>
+            <div *ngIf="texttrade">
+                <ul *ngFor="let bond of MoneyMarketCBBTrade">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowStatistic()"> Statistics</a>
+            <div *ngIf="textstatistic">
+                <ul *ngFor="let bond of MoneyMarketCBBStatistic">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowAdministration()"> Administration</a>
+            <div *ngIf="textadministration">
+                <ul *ngFor="let bond of MoneyMarketCBBAdministration">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!--case:8 for MoneyMarket PAG-->
+        <div *ngSwitchCase="'MoneyMarket PAG'" style="color: white;">
+            <a [routerLink] (click)="ShowTrade()"> Trade Analysis</a>
+            <div *ngIf="texttrade">
+                <ul *ngFor="let bond of MoneyMarketPAGTrade">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+
+                            </a>
+                        </p>
+
+                    </li>
+
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowStatistic()"> Statistics</a>
+            <div *ngIf="textstatistic">
+                <ul *ngFor="let bond of MoneyMarketPAGStatistic">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowAdministration()"> Administration</a>
+            <div *ngIf="textadministration">
+                <ul *ngFor="let bond of MoneyMarketPAGAdministration">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--case:9 for Repo EAA-->
+        <div *ngSwitchCase="'Repo EAA'" style="color: white;">
+            <a [routerLink] (click)="ShowTrade()"> Trade Analysis</a>
+            <div *ngIf="texttrade">
+                <ul *ngFor="let bond of RepoEAATrade">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowStatistic()"> Statistics</a>
+            <div *ngIf="textstatistic">
+                <ul *ngFor="let bond of RepoEAAStatistic">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowAdministration()"> Administration</a>
+            <div *ngIf="textadministration">
+                <ul *ngFor="let bond of RepoEAAAdministration">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--case:10 for Repo CBB-->
+        <div *ngSwitchCase="'Repo CBB'" style="color: white;">
+            <a [routerLink] (click)="ShowTrade()"> Trade Analysis</a>
+            <div *ngIf="texttrade">
+                <ul *ngFor="let bond of RepoCBBTrade">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowStatistic()"> Statistics</a>
+            <div *ngIf="textstatistic">
+                <ul *ngFor="let bond of RepoCBBStatistic">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowAdministration()"> Administration</a>
+            <div *ngIf="textadministration">
+                <ul *ngFor="let bond of RepoCBBAdministration">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!--case:11 for Repo PAG-->
+        <div *ngSwitchCase="'Repo PAG'" style="color: white;">
+            <a [routerLink] (click)="ShowTrade()"> Trade Analysis</a>
+            <div *ngIf="texttrade">
+                <ul *ngFor="let bond of RepoPAGTrade">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+
+                            </a>
+                        </p>
+
+                    </li>
+
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowStatistic()"> Statistics</a>
+            <div *ngIf="textstatistic">
+                <ul *ngFor="let bond of RepoPAGStatistic">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <a [routerLink] (click)="ShowAdministration()"> Administration</a>
+            <div *ngIf="textadministration">
+                <ul *ngFor="let bond of RepoPAGAdministration">
+                    <li>
+                        <p style="text-decoration: none;">
+                            <a [routerLink]="[bond.id]">
+                                {{bond.name}}
+                            </a>
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    <a [routerLink]> History</a>
+</div>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="de.westlb.mgb.model.impl.DualControlJobImpl" table="T16_DUAL_CONTROL_JOB" lazy="false" batch-size="20">
+		<id name="longId" type="long" column="T16_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+		<many-to-one name="commitedBy" lazy="proxy" class="de.westlb.mgb.model.impl.EmployeeImpl">
+			<column name="FK_T16_T01_COMMIT_EMPLOYEE" />
+		</many-to-one>
+		<many-to-one name="requestedBy" lazy="proxy" class="de.westlb.mgb.model.impl.EmployeeImpl">
+			<column name="FK_T16_T01_REQ_EMPLOYEE" />
+		</many-to-one>
+		<many-to-one name="mandant" lazy="proxy" class="de.westlb.mgb.model.impl.MandantImpl">
+			<column name="FK_T16_T09_MANDANT" />
+		</many-to-one>
+		<property name="persistentObject" type="java.sql.Blob">
+			<column name="T16_JAVA_OBJECT" />
+		</property>
+
+		<!--  <many-to-one name="addon" lazy="proxy" class="de.westlb.mgb.model.impl.AddonImpl">
+			<column name="FK_T16_T13_ADDON_OBJECT" />
+		</many-to-one>
+		<many-to-one name="priceCheckCategory" lazy="proxy" class="de.westlb.mgb.model.impl.PriceCheckCategoryImpl">
+			<column name="FK_T16_T11_PRICE_CHECK_OBJECT" />
+		</many-to-one>
+		<many-to-one name="exchange" lazy="proxy" class="de.westlb.mgb.model.impl.ExchangeImpl">
+			<column name="FK_T16_T03_EXCHANGE_OBJECT" />
+		</many-to-one>
+		<many-to-one name="exchangeMappingEntry" lazy="proxy" class="de.westlb.mgb.model.impl.ExchangeMappingEntryImpl">
+			<column name="FK_T16_T21_EXCHANGE_MAP_OBJECT" />
+		</many-to-one>
+		<many-to-one name="instrument" lazy="proxy" class="de.westlb.mgb.model.impl.InstrumentImpl">
+			<column name="FK_T16_T05_INSTRUMENT_OBJECT" />
+		</many-to-one>
+ -->
+		<property name="state" type="string" column="T16_STATE" length="255" />
+		<property name="entityTypeName" type="string" column="T16_ENTITY_TYPE_NAME" length="255" />
+		<property name="description" type="string" column="T16_DESCRIPTION" length="255" />
+		<property name="operation" column="T16_OPERATION_TYPE" type="string" length="6" />
+		<property name="changedDate" column="T16_CHANGED_DATE" />
+		<property name="changedBy" column="T16_CHANGED_BY" length="10" />
+		<property name="createdBy" column="T16_CREATED_BY" length="10" />
+		<property name="creationDate" column="T16_CREATION_DATE" />
+
+		<!--  <many-to-one name="mgbConfiguration" lazy="proxy" class="de.westlb.mgb.model.impl.MgbConfigurationImpl">
+			<column name="FK_T16_T42_MGB_CONFIG_KEY" sql-type="VARCHAR2(100)"/>
+			<column name="FK_T16_T42_MGB_CONFIG_MANDANT" sql-type="VARCHAR2(3)"/>
+		</many-to-one>
+ -->
+	</class>
+
+</hibernate-mapping>

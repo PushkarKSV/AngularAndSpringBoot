@@ -1,0 +1,13 @@
+.main {
+    margin-left: none; /* Same as the width of the sidenav */
+    font-size: 12px; /* Increased text to enable scrolling */
+  
+  }
+
+  div.Display {
+    margin-left: 20px;
+     /* background-color: rgb(245, 240, 240);   */
+   width:100%;
+   height: 800px;
+   overflow: auto;
+  }

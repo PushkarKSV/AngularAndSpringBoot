@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.RoleImpl" table="T29_ROLE" lazy="false" batch-size="20">
+    	<cache usage="read-write"/>
+    	<id name="code" column="T29_ID" length="20">
+	    	<!-- We are going to assign the id manually -->
+    		<generator class="assigned"></generator>
+    	</id>
+        <property name="name" column="T29_NAME" length="200"/>
+    </class>
+
+</hibernate-mapping>

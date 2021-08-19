@@ -1,0 +1,98 @@
+<div class="main">
+        <mat-toolbar style="background-color:rgb(103, 58, 183 );">
+                <mat-toolbar-row>
+
+                        <div class="row">
+                               
+                                        <!-- <mat-icon style="text-rendering: optimizeLegibility;
+                                        -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+                                        color:white;font-size: 40px;margin-left: 120px;"><a routerLink="/">home</a>
+                                        </mat-icon> -->
+                                        <i class="material-icons" style="margin-left: 120px;"> <a routerLink="/" style="color: white;text-decoration: none;">home</a></i>
+                                
+                                <div class="column" style="width: 0%;">
+                                        <button mat-button [matMenuTriggerFor]="belowMenu1"
+                                                style="color: white;">File</button>
+
+                                        <mat-menu #belowMenu1="matMenu" yPosition="below">
+                                                <button mat-menu-item>Print</button>
+                                                <button mat-menu-item>Export</button>
+                                                <button mat-menu-item>Open</button>
+                                                <button mat-menu-item>Save</button>
+                                                <button mat-menu-item>Close</button>
+                                        </mat-menu>
+                                        <button mat-button [matMenuTriggerFor]="belowMenu2"
+                                                style="color: white;">Edit</button>
+                                        <mat-menu #belowMenu2="matMenu" yPosition="below">
+                                                <button mat-menu-item> Cut</button>
+                                                <button mat-menu-item> Copy</button>
+                                                <button mat-menu-item> Paste </button>
+                                                <button mat-menu-item> Edit </button>
+                                                <button mat-menu-item [matMenuTriggerFor]="subMenunew">New</button>
+                                        </mat-menu>
+                                        <mat-menu #subMenunew="matMenu">
+                                                <button mat-menu-item>New Employee</button>
+                                                <button mat-menu-item>New Manual State</button>
+                                                <button mat-menu-item>New Reclamation State</button>
+                                        </mat-menu>
+                                        <button mat-button [matMenuTriggerFor]="belowMenu3"
+                                                style="color: white;">View</button>
+                                        <mat-menu #belowMenu3="matMenu" yPosition="below">
+                                                <button mat-menu-item>Refresh</button>
+                                                <mat-checkbox class="mat-menu-item" (change)="hide()">Toolbar
+                                                </mat-checkbox>
+                                                <mat-checkbox class="mat-menu-item">Foldersbar</mat-checkbox>
+                                                <mat-checkbox class="mat-menu-item">Statusbar</mat-checkbox>
+
+                                        </mat-menu>
+
+                                        <button mat-button [matMenuTriggerFor]="belowMenu4"
+                                                style="color: white;">Extra</button>
+                                        <mat-menu #belowMenu4="matMenu" yPosition="below">
+                                                <button mat-menu-item>New instruments</button>
+                                                <button mat-menu-item>New locations</button>
+                                                <button mat-menu-item>New traders</button>
+                                                <button mat-menu-item>Dual control jobs</button>
+                                                <button mat-menu-item>Search trades...</button>
+                                                <button mat-menu-item>Administrator login</button>
+                                                <button mat-menu-item>Active Users</button>
+                                                <button mat-menu-item>Refresh selection lists</button>
+                                                <button mat-menu-item>Debug</button>
+                                        </mat-menu>
+
+                                        <button mat-button [matMenuTriggerFor]="belowMenu5"
+                                                style="color: white;">Go</button>
+                                        <mat-menu #belowMenu5="matMenu" yPosition="below">
+                                                <button mat-menu-item>Forward</button>
+                                                <button mat-menu-item>Back</button>
+                                                <button mat-menu-item>Next record</button>
+                                                <button mat-menu-item>Previous record</button>
+                                        </mat-menu>
+                                        <button mat-button [matMenuTriggerFor]="belowMenu5"
+                                                style="color: white;">Help</button>
+                                        <mat-menu #belowMenu5="matMenu" yPosition="below">
+                                                <button mat-menu-item>Content</button>
+                                                <button mat-menu-item>Problem database</button>
+                                                <button mat-menu-item>About MGB</button>
+                                        </mat-menu>
+                                </div>
+                        </div>
+                </mat-toolbar-row>
+
+                <mat-toolbar-row *ngIf="menuhide">
+                        <div style="margin-left:260px;">
+                                <button mat-icon-button>
+                                        <mat-icon style="font-size:20px;color: white;">arrow_back</mat-icon>
+                                </button>
+                                <button mat-icon-button>
+                                        <mat-icon style="font-size: 20px;color: white;">arrow_forward</mat-icon>
+                                </button>
+                        </div>
+                </mat-toolbar-row>
+
+
+        </mat-toolbar>
+
+
+
+</div>

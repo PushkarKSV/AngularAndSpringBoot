@@ -1,0 +1,58 @@
+<div class="title-div">
+    <h3 mat-dialog-title>Selected Trades</h3>
+    
+    <button mat-button (click)="closeDialog()" >X</button>
+  </div>
+<mat-dialog-content class="mat-typography">
+    <ag-grid-angular #agGrid of mgrid style="width: 1500px;height:300px;" id="myGrid" class="ag-theme-balham"
+    [columnDefs]="columnDefs"  [pagination]="true"
+     [rowData]="rowData" enableSorting="true" rowSelection="multiple"
+    rowMultiSelectWithClick="true"  
+    [domLayout]="domLayout"
+    (gridReady)="onGridReady($event)"></ag-grid-angular>
+  
+     
+         
+  <div class="selectedTrades2"  style="margin-left: 0%;font-size: 14px;margin-top: 0.5%;">
+    <table>
+      <tr>
+        <td style="border: none;padding: 0px;  text-align: center; padding-right: 0px;">
+          <span style="color: Black;text-decoration-style: solid;font-weight: normal;"> Result </span>
+        </td>
+        <td style="border: none;padding:05px;  text-align: left; padding-right: 0px;">
+            <select class="browser-default custom-select" [(ngModel)]="selectedResultValue"
+            style="font-size: 14px;width: 340px;height: 52px;border: 0.5px solid;">
+            <option>--Select--</option>
+            <option *ngFor="let Result of ResultData">{{Result}}</option>
+          </select>
+        </td>
+        <td style="border: none;padding: 5px;  text-align: center; padding-right: 10px;"></td>
+        <td style="border: none;padding: 0px;  text-align: center; padding-right: 0px;"><span
+            style="color: Black;text-decoration-style: solid;font-size: 14px;font-weight: normal;"> Comment </span>
+        </td>
+        <td style="border: none;padding:05px;  text-align: left; padding-right: 15px;">
+          <textarea (input)="tcode=$event.target.value " name="" id="" cols="42" rows="1"></textarea>
+        </td>
+        <td>
+            <input type="file" id="myFile" style="width:auto" name="file" (change)="fileEvent($event.target.files)">
+
+        </td>
+        
+    </tr>
+      <tr>  
+        <td  style="border: none;padding: 0px;  text-align: center; padding-right: 0px;">
+            <button mat-button color="primary" style="margin-right: 2px;font-size: 18px;" (click)="Submit()">Submit</button>
+        </td>
+        <td style="border: none;padding:05px;  text-align: left; padding-right: 0px;">
+            <!-- <button mat-button (click)="closeDialog()" cdkFocusInitial>Cancel</button> -->
+            <button mat-button color="primary" style="font-size: 18px;"  (click)="closeDialog()" >Cancel</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+</mat-dialog-content>
+<!-- <mat-dialog-actions align="end">
+    <button mat-button color="primary" style="margin-right: 2px;" (click)="Submit()">Submit</button>
+  <button mat-button (click)="closeDialog()" cdkFocusInitial>Cancel</button>
+</mat-dialog-actions> -->

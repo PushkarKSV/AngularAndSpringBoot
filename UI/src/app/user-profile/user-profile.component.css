@@ -1,0 +1,23 @@
+.left { 
+  float:left;
+  width: 14%;
+  height: 90%;
+} 
+.right{ 
+  float:left;
+  width: 80%;
+  height:90%;
+  position: relative;
+  } 
+  
+
+  .test-container{
+      margin-left: 9%;
+      margin-bottom: 20px;
+    }
+
+    ::ng-deep .ag-header-cell-text {
+      text-overflow: clip !important;
+      overflow: visible !important;
+      white-space: normal !important;
+      }

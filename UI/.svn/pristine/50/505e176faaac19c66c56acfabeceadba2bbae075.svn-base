@@ -1,0 +1,28 @@
+<div class="main">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <div style="width:75%;margin-left: 80px;">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="text-align: center;width:100%;">Storno Group</div>
+                    <div class="panel-body">
+                        <div class="test-container" style=" height: 300px ;width:100%;
+                           display: flex;
+                           flex-direction: column;font-family: Verdana, Geneva, Tahoma, sans-serif;
+                               font-size: 13px;">
+                            <ag-grid-angular #agGrid of mgrid style="width: 100%; height: 100%;" id="myGrid"
+                                class="ag-theme-balham" [columnDefs]="columnDefs" [defaultColDef]="defaultColDef"
+                                [rowData]="rowData" (gridReady)="onGridReady($event)" enableSorting="true">
+                            </ag-grid-angular>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

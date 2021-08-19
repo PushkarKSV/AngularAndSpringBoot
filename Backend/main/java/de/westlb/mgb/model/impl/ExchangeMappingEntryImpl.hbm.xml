@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.ExchangeMappingEntryImpl" table="T21_EXCHANGE_MAPPING" lazy="false">
+		<id name="longId" type="long" column="T21_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+        <many-to-one name="exchange" lazy="false" class="de.westlb.mgb.model.impl.ExchangeImpl">
+			<column name="FK_T21_T03_EXCHANGE"/>
+		</many-to-one>
+        <many-to-one name="sourceSystem" lazy="false" class="de.westlb.mgb.model.impl.SourceSystemImpl">
+			<column name="FK_T21_T07_SOURCE_SYSTEM" sql-type="VARCHAR2(3)"/>
+		</many-to-one>
+        <property name="sourceSystemExchangeId" column="T21_SOURCE_SYSTEM_EXCHANGE" length="10"/>
+        <property name="currency" column="T21_CURRENCY" length="3"/>
+        <property name="isin" column="T21_ISIN" length="16"/>
+        <property name="isinCountryPrefix" column="T21_ISIN_PREFIX" length="2"/>
+
+		<many-to-one name="mappingPrio" lazy="false" class="de.westlb.mgb.model.impl.ExchangeMappingEntryPrioImpl">
+			<column name="FK_T21_T22_MAPPING_PRIO"/>
+		</many-to-one>
+		<many-to-one name="mandant" lazy="false" class="de.westlb.mgb.model.impl.MandantImpl">
+			<column name="FK_T21_T09_MANDANT" sql-type="VARCHAR2(3)"/>
+		</many-to-one>
+        <property name="changedDate" column="T21_CHANGED_DATE"/>
+ 		<property name="changedBy" column="T21_CHANGED_BY" length="10"/>
+		<property name="createdBy" column="T21_CREATED_BY" length="10"/>
+        <property name="creationDate" column="T21_CREATION_DATE" />
+    </class>
+
+</hibernate-mapping>

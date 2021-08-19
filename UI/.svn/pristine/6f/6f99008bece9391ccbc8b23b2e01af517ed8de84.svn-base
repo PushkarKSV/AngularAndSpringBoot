@@ -1,0 +1,169 @@
+<div class="main">
+    <h3 >Welcome</h3>
+     <!-- <div class="ex3" >
+        <br>
+        <div  *ngFor="let job of JobList" style="padding-top: 1%;padding-bottom: 2%;margin-left: 5%;">
+            <table border="1" class="">
+                
+                <col width="200">
+                <col width="400">
+                <col width="300">
+                <col width="300">
+               <!-- <th>
+                   Job ID
+               </th>
+               <th>
+                   State
+               </th>
+               <th>
+                   COB
+               </th>
+               <th>
+                    Product
+                </th> 
+                <thead style="background-color: #859391;color: white;">
+                    <tr>
+                        <th> Job ID</th>
+                        <th>State</th>
+                        <th>COB</th>
+                        <th>Product</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+               <tr>
+                   <!-- <td>{{job | json}}</td> 
+                   <td width="auto">{{ job.t08_ID }} </td>
+                   <td width="auto">{{ job.t08_STATUS }}</td>
+                   <td width="auto">{{ job.cob }}</td>
+                   <td width="auto">{{ job.fk_T08_T09_MANDANT}}</td>
+               </tr>
+               </tbody>
+            </table>
+            <div style="padding-top: 1%;"></div>
+      <!-- <button (click) = toggleDisplay()  style="background-color: rgb(157, 243, 146);border-radius: 12px;text-decoration: none;border: none;">Show Trades </button>
+      <div [hidden] = "!isShow" ><div class="table-responsive"> 
+                <table class="table table-bordered count-Table table-responsive" style="width: 100%;">
+                    
+                
+                    <thead style="background-color: #859391;color: white;">
+                        <tr>
+                            <th> Trade</th>
+                            <th> Trade Type</th>
+                            <th>Location</th>
+                            <th>Counter Party</th>
+                            <th>Portfolio</th>
+                            <th>Local Report</th>
+                            <th>Trade Time</th>
+                            <th>Automatic state</th>
+                            <th>Manual State</th>
+                            <th>Manual Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><a routerLink="/Bond EAA/Job">Trade</a></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>OKAY</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            <!-- </div> 
+        </div>
+           
+
+        </div>
+     -->
+</div>
+
+
+<!-- <div class="main">
+    <h3 >Welcome to MGB Bond Client</h3>
+    <!-- <div class="ex3" >
+        <br>
+        <div  *ngFor="let job of JobList" style="padding-top: 1%;padding-bottom: 2%;margin-left: 10%;">
+            <table border="1" class="">
+                
+                <col width="200">
+                <col width="300">
+                <col width="300">
+                <col width="300">
+               <!-- <th>
+                   Job ID
+               </th>
+               <th>
+                   State
+               </th>
+               <th>
+                   COB
+               </th>
+               <th>
+                    Product
+                </th> 
+                <thead style="background-color: #859391;color: white;">
+                    <tr>
+                        <th> Job ID</th>
+                        <th>State</th>
+                        <th>COB</th>
+                        <th>Product</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+               <tr>
+                   <td>1234</td>
+                   <td>Open</td>
+                   <td>12-03-2019</td>
+                   <td>BND</td>
+               </tr>
+               </tbody>
+            </table>
+            <div style="padding-top: 1%;"></div>
+      <button (click) = toggleDisplay()  style="background-color: rgb(157, 243, 146);border-radius: 12px;text-decoration: none;border: none;">Show Trades </button>
+      <div [hidden] = "!isShow" ><div class="table-responsive">
+                <table class="table table-bordered count-Table table-responsive" >
+                    <thead style="background-color: #859391;color: white;">
+                        <tr>
+                            <th> Trade</th>
+                            <th> Trade Type</th>
+                            <th>Location</th>
+                            <th>Counter Party</th>
+                            <th>Portfolio</th>
+                            <th>Local Report</th>
+                            <th>Trade Time</th>
+                            <th>Automatic state</th>
+                            <th>Manual State</th>
+                            <th>Manual Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tradsadsdsfgdshgjhjkjgkjge</td>
+                            <td>TradeTradsadsdsfgdshgjhjkjgkjge</td>
+                            <td>TradeTradsadsdsfgdshgjhjkjgkjge</td>
+                            <td><a routerLink="/Bond EAA/Job">Trade</a></td>
+                            <td>Trade123344567899</td>
+                            <td>Tradsadsdsfgdshgjhjkjgkjge</td>
+                            <td>Tradedsafdsfdn</td>
+                            <td>Trade</td>
+                            <td>TradeTradsadsdsfgdshgjhjkjgkjge</td>
+                            <td>Trade</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+           
+
+        </div>
+    
+</div> -->
+
+

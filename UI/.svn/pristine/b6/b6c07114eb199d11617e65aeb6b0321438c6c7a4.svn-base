@@ -1,0 +1,199 @@
+
+
+
+<div class="main" >  
+              
+    <meta charset="utf-8">
+           <meta name="viewport" content="width=device-width, initial-scale=1">
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+           <meta charset="utf-8">
+           <meta name="viewport" content="width=device-width, initial-scale=1">
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+           
+           <div class="container" >
+           
+               <div class="row row-list" >
+                   
+                       <div
+                       class="panel panel-default" style="width:100%;height: 400px ">
+                       <div class="panel-heading" style="text-align: center;"> 
+                       </div>
+                        <div class="panel-body">
+                            <div class="col-xs-6">
+                                <div
+                                    class="panel panel-default" style="width:100%;height: 300px ;">
+                                    <div class="panel-heading" style="text-align: center;">Trade                           </div>
+                                        <div class="panel-body">
+                                            <table>
+
+                                                <tr>
+                                                  <td>
+                                                  Instrument Name
+                                                </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>
+                                                    <input type="text"  size="60" class="form-control" value="{{Overview[1][2]}}" readonly > 
+                                                  </td>
+                                                </tr>
+                                      
+                                                <tr>
+                                                  <td>
+                                                    Isin
+                                                  </td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>
+                                                      <input type="text"  size="60" class="form-control" value="{{Overview[1][2]}}" readonly  > 
+                                                      </td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>
+                                                      Used Ticker
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                        <input type="text"  size="60" class="form-control" value="" readonly  > 
+                                                        </td>
+                                                    </tr>
+                                              </table> 
+                                        </div>
+                                </div>
+                            </div>
+                        <div class="col-xs-6">
+                            <div
+                            class="panel panel-default" style="width:100%;height: 300px ">
+                            <div class="panel-heading" style="text-align: center;">Check Parameter                           </div>
+                                    <div class="panel-body">
+                                        <table>
+
+                                            <tr>
+                                              <td>
+                                              Category
+                                              </td>
+                                              <td>&nbsp;</td>
+                                              <td>&nbsp;</td>
+                                              <td>&nbsp;</td>
+                                              <td>&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                              <td colspan="6">
+                                                <input type="text"  size="automatically" class="form-control" value="{{Overview[1][5]}} percent" readonly  > 
+                                              </td>
+                                              
+                                              
+                                            </tr>
+                                            <tr>
+                          
+                                            </tr>
+                                            <td>&nbsp;</td>
+                                              <td>&nbsp;</td>
+                                              <td>&nbsp;</td>
+                                              <td>&nbsp;</td>
+                                              <td>&nbsp;</td>
+                                            <tr>
+                                              <td>
+                                                Price tolerance
+                                              </td>
+                                              <td>&nbsp;</td>
+                                              <td>&nbsp;</td>
+                                              <td>&nbsp;</td>
+                                              <td>
+                                                Time tolerance in minutes
+                                              </td>
+                                            </tr>
+                          
+                                            <tr>
+                                              <td>
+                                              absolute
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td>
+                                              in percent
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            </tr>
+                          
+                                            <tr>
+                                                <td>
+                                                    <input type="text"  size="automatically" class="form-control" value="0" readonly  > 
+                                                  </td>
+                                                  <td>&nbsp;</td>
+                                                 
+                                                  <td>
+                                                      <input type="text"  size="automatically" class="form-control" value="{{Overview[1][5]}}" readonly  > 
+                                                    </td>
+                                                    <td>&nbsp;</td>
+                                                    <td>
+                                                        <input type="text"  size="automatically" class="form-control"value="0" readonly  > 
+                                                      </td>
+                                            </tr>
+                                              
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                  <td>&nbsp;</td>
+                                                  <td>&nbsp;</td>
+                                                  <td>&nbsp;</td>
+                                                  <td>&nbsp;</td>
+                                                </tr>
+                          
+                                            <tr>
+                                              <td>Addon</td>
+                                              <td>&nbsp;</td>
+                                              <td>&nbsp;</td>
+                                              <td>&nbsp;</td>
+                                              <td>&nbsp;</td>
+                                            </tr>
+                          
+                                            <tr>
+                                              <td>Name</td>
+                                              <td>&nbsp;</td>
+                                              <td>Price tolerance in percent</td>
+                                              <td>&nbsp;</td>
+                                              <td>Time tolerance in minutes</td>
+                                            </tr>
+                          
+                                         
+                                            <tr>
+                                                <td>
+                                                    <input type="text"  size="automatically" class="form-control" value="" readonly  > 
+                                                  </td>
+                                                  <td>&nbsp;</td>
+                                                 
+                                                  <td>
+                                                      <input type="text"  size="automatically" class="form-control" value="0" readonly  > 
+                                                    </td>
+                                                    <td>&nbsp;</td>
+                                                    <td>
+                                                        <input type="text"  size="automatically" class="form-control" value="0" readonly  > 
+                                                      </td>
+                                            </tr>
+                          
+                                          </table>  
+                                    </div>
+                            </div>
+                        </div>
+                
+                
+                                   
+            
+                         </div>
+                        </div>
+                    
+                </div>
+           
+           
+           
+           </div>
+        </div>
+
+<router-outlet></router-outlet>
+
+

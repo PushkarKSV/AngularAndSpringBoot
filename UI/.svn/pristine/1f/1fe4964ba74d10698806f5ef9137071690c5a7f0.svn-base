@@ -1,0 +1,25 @@
+
+h2{
+  text-align: center;
+  
+}
+
+
+
+div{
+  background-color: lightblue;
+}
+.left1 { 
+  
+ margin-left: 0%;
+  width: 100%;
+} 
+.right1{ 
+  
+  margin-left: 5px;
+  width: 85%;
+} 
+.main {
+  margin-left: 270px; /* Same as the width of the sidenav */
+  
+}

@@ -1,0 +1,24 @@
+.left { 
+    float:left; 
+    width: 14%;
+    height: 92%;
+} 
+.right{ 
+  float:left;
+  width: 80%;
+  margin-left: 40px;
+  } 
+  .main {
+    margin-left: 273px; /* Same as the width of the sidenav */
+    
+  }
+
+  .content{
+    text-align: center;
+    margin-top: 1em;
+  }
+
+  .example-card {
+    max-width: 98%;
+    max-height: 140%;
+  }

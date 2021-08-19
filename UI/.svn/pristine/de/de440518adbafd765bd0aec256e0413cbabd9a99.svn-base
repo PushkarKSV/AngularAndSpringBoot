@@ -1,0 +1,108 @@
+ 
+     
+
+     <div class="left" style="display: inline-block;">
+      <app-sidemenu></app-sidemenu>
+    </div>
+     
+ 
+      <div class ="content" >
+        <h2 style="font-family: sans-serif;text-align: center;"> MCC Local report</h2>
+      <h4 style="font-family: sans-serif">Please enter the date fields using the format 'dd.MM.yyyy' and submit to generate a spreadsheet that contains all trades during that period.</h4>
+   
+      </div>
+      <br>
+      <br>
+      
+      <form class="example-card" (ngSubmit)="onSubmit()" #userForm="ngForm" >
+        <mat-card>
+      <div class="blocks">
+        
+        <label style="width: 29%;font-family: sans-serif;">Date from:</label>
+        <mat-form-field>
+            <mat-label></mat-label>
+            <input matInput [(ngModel)]="user.datefrom" [matDatepicker]="dateFrom" ngModel required  name="Datefrom">
+            <mat-datepicker-toggle matSuffix [for]="dateFrom" ></mat-datepicker-toggle>
+            <mat-datepicker #dateFrom></mat-datepicker>
+            
+        </mat-form-field>
+  
+        
+        </div>
+        
+        <div class="blocks">
+        <label style="width: 29%;font-family: sans-serif;">Date to:</label>
+        <mat-form-field>
+            <mat-label></mat-label>
+            <input matInput  [(ngModel)]="user.dateto" [matDatepicker]="dateTo" required  ngModel name="Dateto">
+            <mat-datepicker-toggle matSuffix [for]="dateTo"></mat-datepicker-toggle>
+            <mat-datepicker #dateTo></mat-datepicker>
+          </mat-form-field>
+         
+        </div>
+       
+      
+      <div class="blocks">
+      <label style="display: flex;font-family: sans-serif;" style="width: 29%;">Datefilter:</label>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+       style="display: flex;flex-direction: column;" [(ngModel)]="user.datefilter" (change)="selectDateFilter($event)" ngModel required name="Datefilter">
+        <mat-radio-button class="example-radio-button" *ngFor="let dateFilter of dateFilters "  [value]="dateFilter"  >
+          {{dateFilter}}
+        </mat-radio-button>
+      </mat-radio-group>
+      </div>
+      
+      <div class="blocks">
+      <label id="example-radio-group-label" style="width: 29%;font-family: sans-serif;">Report type: </label>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+         style="display: flex;flex-direction: column;" (change)="selectReportType($event)"  [(ngModel)]="user.reporttype"  name="reporttype" #reporttype="ngModel">
+        <mat-radio-button class="example-radio-button" *ngFor="let reporttype of reporttypes" [value]="reporttype" required >
+          {{reporttype}}
+        </mat-radio-button>
+      </mat-radio-group>
+      </div>
+      
+      <div class="blocks">
+      <label id="example-radio-group-label" style="width: 29%;font-family: sans-serif;">Market data:</label>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        style="display: flex;flex-direction: column;" (change)="selectMarketData($event)"[(ngModel)]="user.marketdata" ngModel required name="Marketdata">
+        <mat-radio-button class="example-radio-button" *ngFor="let marketDataDisplay of marketDataDisplay" [value]="marketDataDisplay"  >
+          {{marketDataDisplay}}
+        </mat-radio-button>
+      </mat-radio-group>
+      </div>
+      
+      <div class="blocks">
+      <label id="example-radio-group-label" style="width: 29%;font-family: sans-serif;">Report Location:</label>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        style="display: flex;flex-direction: column;" (change)="selectReportLocation($event)"[(ngModel)]="user.reportLocation" required ngModel name="ReportLocation" >
+        <mat-radio-button class="example-radio-button" *ngFor="let reportLocation of reportLocations" [value]="reportLocation" ngModel name="Report Location" >
+          {{reportLocation}}
+        </mat-radio-button>
+      </mat-radio-group>
+      </div>
+     
+      
+      <div style="display: flex;justify-content: center;margin-top: 1em;">
+          <!-- <button mat-raised-button color="primary" style="margin-right: 1em;" (click)="getLocalReport()">Submit</button>
+          <button mat-raised-button>Cancel</button> -->
+          <button mat-raised-button color="primary"  style="margin-right: 1em;" >Submit</button>
+          
+      </div>
+     </mat-card>
+    </form>
+  
+      <!-- </div> -->
+      
+    <!-- </div> -->
+  
+
+     <router-outlet></router-outlet>

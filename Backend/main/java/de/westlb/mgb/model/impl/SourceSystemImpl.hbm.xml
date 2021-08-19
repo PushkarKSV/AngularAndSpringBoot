@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.SourceSystemImpl" table="T07_SOURCE_SYSTEM" lazy="false">
+    	<cache usage="read-write"/>
+     	<id name="code" column="T07_ID" length="3">
+	    	<!-- We are going to assign the id manually -->
+    		<generator class="assigned"></generator>
+    	</id>
+        <property name="name" column="T07_NAME" length="50"/>
+		<many-to-one name="mandant" lazy="proxy" class="de.westlb.mgb.model.impl.MandantImpl">
+			<column name="FK_T07_T09_MANDANT" sql-type="VARCHAR2(3)"/>
+		</many-to-one>
+        <property name="enabled" type="yes_no" column="T07_ENABLED"/>		
+        <property name="expectedJobs" column="T07_EXPECTED_JOBS" />
+ 		<property name="converter" column="converter"/>
+		<property name="cobDepends" column="cob_depends"/>
+        <property name="filename" column="filename" />
+        <property name="fileExt" column="file_ext" />
+        <property name="lastLineFormat" column="lastLine_Format" />
+        <property name="lastLineDateFormat" column="lastLine_Date_Format" />
+        <property name="maxCheckDiff" column="max_check_diff" />
+        <property name="maxFileAge" column="max_file_age" />
+        <property name="maxLoadErrors" column="max_load_errors" />
+        <property name="maxConvertErrors" column="max_convert_errors" />
+        <property name="offset" column="offset" />
+        <property name="cobFormat" column="cob_format" />
+        <property name="cobIndex" column="cob_index" />
+    </class>
+
+</hibernate-mapping>

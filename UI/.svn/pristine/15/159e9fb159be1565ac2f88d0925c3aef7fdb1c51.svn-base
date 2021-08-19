@@ -1,0 +1,260 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened style="width: 14%;">
+    <app-sidemenu></app-sidemenu>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-breadcrumb></app-breadcrumb>
+    <div class="container" style="margin-top: 10%;margin-left: 6%;">
+      <table>
+        <tr>
+          <td *ngIf="HomeEAAJobsTrades">
+            <h4 style="font-weight:bold">EAA </h4>
+          </td>
+        </tr>
+        <tr *ngIf="HomeEAAJobsTrades">
+          <td *ngFor="let client of HomeEAAJobsTrades" style="margin-right: 0px;" (click)="getAllJobs([client[1]])"
+            class="e">
+            <div
+              style="display: inline-block;border-left-style: solid;margin-right:10px;border-left-color:  blueviolet;color: black;min-width: 0px;width:340px;
+              font-size: 18px;border-bottom-right-radius: 15px;border-top-right-radius: 15px;background-color: rgb(170, 220, 243);padding: 20px;">
+
+              <a [routerLink]="[client[1]+'/Job']" routerLinkActive="active" *ngIf="client[1]=='Bond EAA'"
+                (click)="getAllJobs([client[1]])">
+                <div style="display: inline-block;width: 180px;margin-right: 0px;font-weight: bold;">
+                  Bond
+                </div>
+              </a>
+
+              <a [routerLink]="[client[1]+'/Job']" routerLinkActive="active" *ngIf="client[1]=='Derivate EAA'"
+                (click)="getAllJobs([client[1]])">
+                <div style="display: inline-block;width: 180px;margin-right: 0px;font-weight: bold;">
+                  Derivative
+                </div>
+              </a>
+
+              <a [routerLink]="[client[1]+'/Job']" routerLinkActive="active" *ngIf="client[1]=='MoneyMarket EAA' "
+                (click)="getAllJobs([client[1]])">
+                <div style="display: inline-block;width: 180px;margin-right: 0px;font-weight: bold;">
+                  MoneyMarket
+                </div>
+              </a>
+
+              <a [routerLink]="[client[1]+'/Job']" routerLinkActive="active" *ngIf="client[1]=='Repo EAA'"
+                (click)="getAllJobs([client[1]])">
+                <div style="display: inline-block;width: 180px;margin-right: 0px;font-weight: bold;">
+                  Repo
+                </div>
+              </a>
+
+              <div style="display: inline-block;width:50px;margin-right: 10px;">
+
+                <div><img src="assets\jobs.png" style="width: 60%;height:70%;"></div>
+
+                <div *ngIf="client[4]==0" (click)="getOpenJobs([client[1]])">
+                  <div class="numberCircle0" style="padding-right: 0px;font-weight: bold;">{{client[4]}}</div>
+                </div>
+
+                <div *ngIf="client[4]!=0" (click)="getOpenJobs([client[1]])">
+                  <div class="numberCircle1" style="padding-right: 0px;font-weight: bold;">{{client[4]}}</div>
+                </div>
+
+              </div>
+
+              <div style="display: inline-block;width: 50px;">
+
+                <div><img src="assets\Trade.png" style="width: 55%;height: 50%;"></div>
+
+                <div *ngIf="client[5]==0">
+                  <a [routerLink]="[client[1]+'/TradeList']" routerLinkActive="active" (click)=onClick1()>
+                    <div class="numberCircle0" style="padding-right: 0px;font-weight: bold;">{{client[5]}}</div>
+                  </a>
+
+                </div>
+                <div *ngIf="client[5]!=0">
+                  <a [routerLink]="[client[1]+'/TradeList']" routerLinkActive="active" (click)=onClick()>
+                    <div class="numberCircle1" style="padding-right: 0px;font-weight: bold;">{{client[5]}}</div>
+                  </a>
+
+                </div>
+
+              </div>
+            </div>
+          </td>
+
+          <td>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+          <br><br><br>
+        </tr>
+        <tr *ngIf="HomeCBBJobsTrades">
+          <td>
+            <h4 style="font-weight:bold">CBB</h4>
+          </td>
+        </tr>
+        <tr *ngIf="HomeCBBJobsTrades">
+          <td *ngFor="let client of HomeCBBJobsTrades" style="margin-right: 0px;" (click)="getAllJobs([client[1]])"
+            class="e">
+
+            <div
+              style="display: inline-block;border-left-style: solid;margin-right:10px;border-left-color:  blueviolet;color: black;min-width: 0px;width:340px;
+              font-size: 18px;border-bottom-right-radius: 15px;border-top-right-radius: 15px;background-color: rgb(170, 220, 243);padding: 20px;">
+
+              <a [routerLink]="[client[1]+'/Job']" routerLinkActive="active" *ngIf="client[1]=='Bonds CBB'"
+                (click)="getAllJobs([client[1]])">
+                <div style="display: inline-block;width: 180px;margin-right: 0px;font-weight: bold;">
+                  Bond
+                </div>
+              </a>
+
+              <a [routerLink]="[client[1]+'/Job']" routerLinkActive="active" *ngIf="client[1]=='Derivative CBB'"
+                (click)="getAllJobs([client[1]])">
+                <div style="display: inline-block;width: 180px;margin-right: 0px;font-weight: bold;">
+                  Derivative
+                </div>
+              </a>
+
+              <a [routerLink]="[client[1]+'/Job']" routerLinkActive="active" *ngIf="client[1]=='MoneyMarket CBB' "
+                (click)="getAllJobs([client[1]])">
+                <div style="display: inline-block;width: 180px;margin-right: 0px;font-weight: bold;">
+                  MoneyMarket
+                </div>
+              </a>
+
+              <a [routerLink]="[client[1]+'/Job']" routerLinkActive="active" *ngIf="client[1]=='Repo CBB'"
+                (click)="getAllJobs([client[1]])">
+                <div style="display: inline-block;width: 180px;margin-right: 0px;font-weight: bold;">
+                  Repo
+                </div>
+              </a>
+
+              <div style="display: inline-block;width:50px;margin-right: 10px;">
+
+                <div><img src="assets\jobs.png" style="width: 60%;height:70%;"></div>
+
+                <div *ngIf="client[4]==0">
+
+                  <div class="numberCircle0" style="padding-right: 0px;font-weight: bold;"
+                    (click)="getOpenJobs([client[1]])">{{client[4]}}</div>
+                </div>
+
+                <div *ngIf="client[4]!=0">
+                  <div class="numberCircle1" style="padding-right: 0px;font-weight: bold;"
+                    (click)="getOpenJobs([client[1]])">{{client[4]}}</div>
+                </div>
+              </div>
+              <div style="display: inline-block;width: 50px;">
+                <div><img src="assets\Trade.png" style="width: 55%;height: 50%;"></div>
+
+                <div *ngIf="client[5]==0">
+                  <a [routerLink]="[client[1]+'/TradeList']" routerLinkActive="active" (click)="onClick1()">
+                    <div class="numberCircle0" style="padding-right: 0px;font-weight: bold;">{{client[5]}}</div>
+                  </a>
+                </div>
+                <div *ngIf="client[5]!=0">
+                  <a [routerLink]="[client[1]+'/TradeList']" routerLinkActive="active" (click)="onClick()">
+                    <div class="numberCircle2" style="padding-right: 0px;font-weight: bold;">{{client[5]}}</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </td>
+
+          <td>&nbsp;&nbsp;</td>
+        </tr>
+
+
+        <tr *ngIf="HomePAGJobsTrades">
+          <br><br><br>
+        </tr>
+        <tr *ngIf="HomePAGJobsTrades">
+          <td>
+            <h4 style="font-weight:bold">PAG </h4>
+          </td>
+        </tr>
+        <tr *ngIf="HomePAGJobsTrades">
+          <td *ngFor="let client of HomePAGJobsTrades" style="margin-right: 0px;" (click)="getAllJobs([client[1]])"
+            class="e">
+
+            <div
+              style="display: inline-block;border-left-style: solid;margin-right:10px;border-left-color:  blueviolet;color: black;min-width: 0px;width:340px;
+          font-size: 18px;border-bottom-right-radius: 15px;border-top-right-radius: 15px;background-color: rgb(170, 220, 243);padding: 20px;">
+
+              <a [routerLink]="[client[1]+'/Job']" routerLinkActive="active" *ngIf="client[1]=='Bond PAG'"
+                (click)="getAllJobs([client[1]])">
+                <div style="display: inline-block;width: 180px;margin-right: 0px;font-weight: bold;">
+                  Bond
+                </div>
+              </a>
+
+              <a [routerLink]="[client[1]+'/Job']" routerLinkActive="active" *ngIf="client[1]=='Derivative PAG'"
+                (click)="getAllJobs([client[1]])">
+                <div style="display: inline-block;width: 180px;margin-right: 0px;font-weight: bold;">
+                  Derivative
+                </div>
+              </a>
+
+              <a [routerLink]="[client[1]+'/Job']" routerLinkActive="active" *ngIf="client[1]=='MoneyMarket PAG'"
+                (click)="getAllJobs([client[1]])">
+                <div style="display: inline-block;width: 180px;margin-right: 0px;font-weight: bold;">
+                  MoneyMarket
+                </div>
+              </a>
+
+              <a [routerLink]="[client[1]+'/Job']" routerLinkActive="active" *ngIf="client[1]=='Repo PAG'"
+                (click)="getAllJobs([client[1]])">
+                <div style="display: inline-block;width: 180px;margin-right: 0px;font-weight: bold;">
+                  Repo
+                </div>
+              </a>
+
+              <div style="display: inline-block;width:50px;margin-right: 10px;">
+
+                <div><img src="assets\jobs.png" style="width: 60%;height:70%;"></div>
+
+                <div *ngIf="client[4]==0">
+                  <div class="numberCircle0" style="padding-right: 0px;font-weight: bold;"
+                    (click)="getOpenJobs([client[1]])">{{client[4]}}</div>
+                </div>
+                <div *ngIf="client[4]!=0">
+
+                  <div class="numberCircle1" style="padding-right: 0px;font-weight: bold;"
+                    (click)="getOpenJobs([client[1]])">{{client[4]}}</div>
+                </div>
+              </div>
+              
+              <div style="display: inline-block;width: 50px;">
+                <div><img src="assets\Trade.png" style="width: 55%;height: 50%;"></div>
+
+                <div *ngIf="client[5]==0">
+                  <a [routerLink]="[client[1]+'/TradeList']" routerLinkActive="active" (click)="onClick1()">
+                    <div class="numberCircle0" style="padding-right: 0px;font-weight: bold;">{{client[5]}}</div>
+                  </a>
+                </div>
+                <div *ngIf="client[5]!=0">
+                  <a [routerLink]="[client[1]+'/TradeList']" routerLinkActive="active" (click)="onClick()">
+                    <div class="numberCircle2" style="padding-right: 0px;font-weight: bold;">{{client[5]}}</div>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+          </td>
+
+          <td>&nbsp;&nbsp;</td>
+        </tr>
+
+
+
+      </table>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+<router-outlet></router-outlet>

@@ -1,0 +1,36 @@
+<div class="Display">
+<div *ngIf="val1==2">
+  <p style="margin-left: 0px;">
+    <app-breadcrumb></app-breadcrumb>
+  </p>
+</div>
+
+<div *ngIf="val==0">
+  <ul class="breadcrumb" style="margin-left: 0px;">
+    <li><a routerLink="../../../../" routerLinkActive="active">Job</a></li>
+    <li><a routerLink="../../" routerLinkActive="active">TradeList</a></li>
+    <li>TradeDetails</li>
+  </ul>
+</div>
+<div *ngIf="val==1">
+  <ul class="breadcrumb" style="margin-left: 0px;">
+    <li><a routerLink="../../../" routerLinkActive="active">Searchtrades</a></li>
+    <li>TradeDetails</li>
+  </ul>
+</div>
+<div *ngIf="val1==1">
+  <ul class="breadcrumb" style="margin-left: 0px;">
+    <li><a routerLink="../../../" routerLinkActive="active">TradeList</a></li>
+    <li>TradeDetails</li>
+  </ul>
+</div>
+
+
+  <div class="main">
+    
+  
+      <app-overview></app-overview>
+   
+  </div>
+</div>
+<router-outlet></router-outlet>

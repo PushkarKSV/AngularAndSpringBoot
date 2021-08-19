@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.TraderImpl" table="T18_TRADER" lazy="false" batch-size="20">
+    	<cache usage="read-write"/>
+		<id name="longId" type="long" column="T18_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+        <many-to-one name="employee" class="de.westlb.mgb.model.impl.EmployeeImpl">
+        	<column name="FK_T18_T01_EMPLOYEE"/>
+ 		</many-to-one>
+		<many-to-one name="sourceSystem" lazy="proxy" class="de.westlb.mgb.model.impl.SourceSystemImpl">
+			<column name="FK_T18_T07_SOURCE_SYSTEM" sql-type="VARCHAR2(3)" index="I18_SOURCE_TRADER"/>
+		</many-to-one>
+        <property name="traderCode">
+        	 <column name="T18_TRADER_CODE" length="50" index="I18_SOURCE_TRADER"/>
+		</property>
+ 		<many-to-one name="mandant" lazy="proxy" class="de.westlb.mgb.model.impl.MandantImpl">
+			<column name="FK_T18_T09_MANDANT" sql-type="VARCHAR2(3)" />
+		</many-to-one>
+		<property name="changedDate" column="T18_CHANGED_DATE" />
+		<property name="changedBy" column="T18_CHANGED_BY" length="10"/>
+		<property name="createdBy" column="T18_CREATED_BY" length="10"/>
+		<property name="creationDate" column="T18_CREATION_DATE" />
+
+    </class>
+
+</hibernate-mapping>

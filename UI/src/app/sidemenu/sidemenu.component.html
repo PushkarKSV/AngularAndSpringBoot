@@ -1,0 +1,19 @@
+<div class="sidenav">
+
+    <a routerLink="/" routerLinkActive="active" style="margin-top: 20%;color: white;font-size: 18px;">Home</a>
+    <a  routerLinkActive="active" style="color: white;font-size: 18px;">Trader Control</a>
+    <a [routerLink]  (click)="ShowReport()"  style="color: white;font-size: 18px;"> Reports</a>
+                                    <div *ngIf="Report">
+                                        <ul  *ngFor="let report of ReportData" >
+                                            <li  style="color: white;">
+                                                <p style="text-decoration: none;" >
+                                                    <a routerLink="LocalReport"  style="color: white;font-size: 18px;">
+                                                        {{report.name}}
+                                                    </a>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        </div>
+
+</div>
+<router-outlet></router-outlet>

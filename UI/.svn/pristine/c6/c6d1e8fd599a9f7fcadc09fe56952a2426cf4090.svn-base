@@ -1,0 +1,56 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="main" style="width:60%;
+    display: flex;
+    flex-direction: column;margin-left:none;font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 13px;
+        margin-bottom: 5px;">
+
+    <table>
+        <tr>
+            <td><b>Select Date Range</b></td>
+            <td><br><br><br><br></td>
+            <td><br><br><br><br></td>
+            <td><br><br><br><br></td>
+            <td><br><br><br><br></td>
+        </tr>
+        <tr>
+            <td>
+                <ejs-datepicker id='datepicker' [ngModel]="startdateValue | date:'yyyy-MM-dd'"
+                    (ngModelChange)="startdateValue = $event" placeholder='From date' format='yyyy-MM-dd'
+                    style="width: 400px;"></ejs-datepicker>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>
+                <ejs-datepicker id='datepicker1' [ngModel]="enddateValue | date:'yyyy-MM-dd'"
+                    (ngModelChange)="enddateValue = $event" placeholder='Till date' format='yyyy-MM-dd'
+                    style="width: 400px;"></ejs-datepicker>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td><button (click)="onClickMe(startdateValue,enddateValue)">Show Statistics</button>
+
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="main" [style.display]="display1" style=" height: 55% ;width:82%;
+  display: flex;
+  flex-direction: column;margin-left:none;font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 13px;
+      margin-bottom: 5px;">
+    <div style="text-align: right;padding: 15px;">
+        Job Statistics ({{startDateConvert}} - {{endDateConvert}})
+    </div>
+    <ag-grid-angular #agGrid of mgrid style="width: 100%; height: 100%;" id="myGrid" class="ag-theme-balham"
+        [columnDefs]="columnDefs" [defaultColDef]="defaultColDef" [pagination]="true"
+        [paginationPageSize]="paginationPageSize" [rowData]="rowData" (gridReady)="onGridReady($event)"
+        enableSorting="true" [quickFilterText]="quickSearchValue" [rowData]="rowData" (gridReady)="onGridReady($event)"
+        enableSorting="true" (rowClicked)='onRowClicked($event)'></ag-grid-angular>
+
+</div>
+<router-outlet></router-outlet>

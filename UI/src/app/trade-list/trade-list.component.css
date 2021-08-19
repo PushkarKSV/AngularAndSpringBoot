@@ -1,0 +1,65 @@
+.main {
+  /* Same as the width of the sidenav */
+margin-left: 20px;
+}
+ul.breadcrumb li a {
+    color:black;
+    text-decoration: none;
+  }
+  ul.breadcrumb li+li:before{
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+  }
+
+  .selectedTrades td{
+    padding-right: 5px;
+    padding: 5px;
+    font-size: 13px;
+              border: 1px solid;
+              text-align: center;
+              color: black;
+              width: 150px;
+              /* width: max-content; */
+              font-family: 'Times New Roman', Times, serif;
+              /* min-width: 140px; */
+              
+              
+  }
+  .selectedTrades th{
+    padding-right: 5px;
+    padding: 10px;
+    color: black;
+    font-size: 13px;
+              border: 1px solid;
+              text-align: center;
+  }
+
+  .selectedTrades{
+    
+    border: 1px solid ;
+  }
+
+  .selectedTrades1{
+    width:auto;
+    height: 100px;
+    overflow: auto;
+  
+  }
+
+  .selectedTrades1 th{
+    background-color: lightgray;
+  }
+  .selectedTrades2 td{
+    padding-right: 0%;
+    padding: 0%;
+  
+  }
+  
+  .Submit td{
+    padding-right: 10px;
+    padding: 15px;
+             border: none;
+              text-align: center;
+  }
+  

@@ -1,0 +1,8 @@
+<app-file-header></app-file-header>
+
+<div class="split left">
+    <app-file-side></app-file-side>>
+</div>
+<div class="split1 right">
+    <router-outlet></router-outlet>
+</div>

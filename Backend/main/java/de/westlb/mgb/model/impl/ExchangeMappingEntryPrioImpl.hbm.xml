@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.ExchangeMappingEntryPrioImpl" table="T22_EXCHANGE_MAPPING_PRIORITY" lazy="false">
+ 		<id name="prio" type="integer" column="T22_PRIORITY">
+	    	<!-- We are going to assign the id manually -->
+    		<generator class="assigned"></generator>
+		</id>
+        <property name="sourceSystemNotNull" type="yes_no" column="T22_SRC_SYS_NOT_NULL"/>
+        <property name="isinNotNull" type="yes_no" column="T22_ISIN_NOT_NULL"/>
+        <property name="isinCountryPrefixNotNull" type="yes_no" column="T22_ISIN_PREFIX_NOT_NULL"/>
+        <property name="sourceSystemExchangeIdNotNull" type="yes_no" column="T22_SRC_SYS_EXCHANGE_NOT_NULL"/>
+        <property name="currencyNotNull" type="yes_no" column="T22_CURRENCY_NOT_NULL"/>
+
+ 		<property name="prioName" column="T22_NAME" length="50"/>
+		<many-to-one name="mandant" lazy="false" class="de.westlb.mgb.model.impl.MandantImpl">
+			<column name="FK_T22_T09_MANDANT" sql-type="VARCHAR2(3)"/>
+		</many-to-one>
+        <property name="changedDate" column="T22_CHANGED_DATE"/>
+ 		<property name="changedBy" column="T22_CHANGED_BY" length="10"/>
+		<property name="createdBy" column="T22_CREATED_BY" length="10"/>
+        <property name="creationDate" column="T22_CREATION_DATE" />
+    </class>
+
+</hibernate-mapping>

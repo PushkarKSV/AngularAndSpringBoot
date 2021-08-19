@@ -1,0 +1,106 @@
+
+<p style="margin-left: 270px;"><app-breadcrumb></app-breadcrumb></p>
+
+<div class="main">    
+       
+           <div class="ex3" >
+
+               <br>
+
+       
+             
+
+
+       <div  *ngFor="let job of JobList" style="padding-top: 1%;padding-bottom: 2%;margin-left: 5%;">
+           
+           <table border="1" class="">
+               
+               <col width="200">
+               <col width="400">
+               <col width="300">
+               <col width="300">
+              
+               <thead style="background-color: #859391;color: white;">
+                   <tr>
+                       <th>Action</th>
+                       <th> Job ID</th>
+                       <th>State</th>
+                       <th>COB</th>
+                       <th>Product</th>
+                       
+                   </tr>
+               </thead>
+               <tbody>
+              <tr>
+               <td width="auto" *ngIf='job.t08_STATUS!="OK"'><button type="button" class="btn btn-secondary btn-sm" (click) = "closeJob(job.t08_ID)">Close Job</button></td> 
+               <td width="auto" *ngIf='job.t08_STATUS=="OK"'><button type="button" class="btn btn-secondary btn-sm" [disabled]="true">Close Job</button></td>
+               <td width="auto"><a [routerLink]="[job.t08_ID+'/TradeList']">{{ job.t08_ID }} </a></td>
+                  <!-- <td width="auto"><a [routerLink]="['Job']">{{ job.t08_ID }} </a></td> -->
+                  <td width="auto">{{ job.t08_STATUS }}</td>
+                  <td width="auto">{{ job.cob }}</td>
+                  <td width="auto">{{ job.fk_T08_T09_MANDANT}}</td>
+              </tr>
+              </tbody>
+           </table>
+           
+           <div  *ngFor="let job1 of JobList1"  >
+              
+     <div *ngIf="job.t08_ID  == job1.t08_ID ">
+               <table  class="table table-bordered count-Table table-responsive" style="width:100%;">
+                   <col width="200">
+               <col width="400">
+               <col width="300">
+               <col width="300"><col width="200">
+               <col width="400">
+               <col width="300">
+               <col width="300"><col width="200">
+               <col width="400">
+               
+               
+                   <thead style="background-color: #859391;color: white;">
+                       <tr>
+                           <th> Trade</th>
+                           <th> Trade Type</th>
+                           <th>Location</th>
+                           <th>Counter Party</th>
+                           <th>Portfolio</th>
+                           <th>Local Report</th>
+                           <th>Trade Time</th>
+                           <th>Automatic state</th>
+                           <th>Manual State</th>
+                           <th>Manual Comment</th>
+                       </tr>
+                   </thead>
+                   <tbody >
+                       
+                       <tr>
+                           <td><a [routerLink]="[job1.t02_SRC_TRADE_ID +'/TradeOverview']">{{ job1.t02_SRC_TRADE_ID }}</a></td>
+                           <td></td>
+                           <td>{{job1.t44_LOCATION_TRADER}}</td>
+                           <td>{{job1.t02_COUNTERPARTY_ID}}</td>
+                           <td>{{job1.t02_BOOK_ID}}</td>
+                           <td></td>
+                           <td>{{job1.t02_TRADE_DATE}}</td>
+                           <td>OKAY</td>
+                           <td>{{job1.fk_T02_T04_MANUAL_STATE}}</td>
+                           <td></td>
+                       </tr>
+                       
+                   </tbody>
+               </table>
+           </div>
+           </div>
+      
+       </div>
+         
+
+       </div>
+
+
+
+       
+</div>
+
+         
+
+

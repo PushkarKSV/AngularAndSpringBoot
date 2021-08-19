@@ -1,0 +1,29 @@
+.main {
+    /* Same as the width of the sidenav */
+  
+  height: auto;
+  margin-left: 20px;
+  }
+
+  .left {
+    float:left;
+     
+}
+::ng-deep .ag-header-cell-text {
+  text-overflow: clip !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  }
+
+.right {
+  float:right;
+   
+}
+.container{
+ margin-left: 273px;
+ width: 100%;
+  /* z-index: 1; */
+  /* background-color:rgb(103, 58, 183 ); */
+  /* overflow-x: visible; */
+ 
+}

@@ -1,0 +1,2110 @@
+<div class="Display1" style="width: 100%;margin-bottom: 1px;scrollbar-width: thin;">
+    <div *ngIf="val1==2">
+        <p style="margin-left: 0px;">
+          <app-breadcrumb></app-breadcrumb>
+        </p>
+      </div>
+      
+      <div *ngIf="val==0">
+        <ul class="breadcrumb" style="margin-left: 0px;">
+          <li><a routerLink="../../../../" routerLinkActive="active">Job</a></li>
+          <li><a routerLink="../../" routerLinkActive="active">TradeList</a></li>
+          <li>TradeDetails</li>
+        </ul>
+      </div>
+      <div *ngIf="val==1">
+        <ul class="breadcrumb" style="margin-left: 0px;">
+          <li><a routerLink="../../../" routerLinkActive="active">Searchtrades</a></li>
+          <li>TradeDetails</li>
+        </ul>
+      </div>
+      <div *ngIf="val1==1">
+        <ul class="breadcrumb" style="margin-left: 0px;">
+          <li><a routerLink="../../../" routerLinkActive="active">TradeList</a></li>
+          <li>TradeDetails</li>
+        </ul>
+      </div>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <div style="width:92%;margin-left: 5%;font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 17px;">
+    Overview
+    </div>
+    </div>
+            
+    
+            <div class="test-container"
+                *ngIf="[Mandant].toString()=='Bond EAA' || [Mandant].toString()=='Bonds CBB' || [Mandant].toString()=='Bond PAG'"
+                style="width:92%;margin-left: 5%;margin-top: 10px;">
+                <div class="Display" >
+                    <div>
+                        <div class="panel panel-default" style="position: relative;width: 1320px;">
+                            <div class="panel-heading"
+                                style="text-align: center;font-size:12px; width:100%;padding: 0.1px;font-weight: bold">Trade</div>
+                            <div class="panel-body" style="font-size:12px;width: 90%;">
+    
+                                <section>
+                                    <table class="Bond" >
+    
+                                        <tr >
+                                            <td><label for="name">Instrument</label></td>
+                                            <td></td>
+                                            <td><label for="name">Volume</label></td>
+                                            <td></td>
+                                            <td><label for="name">Price</label></td>
+                                            <td></td>
+                                            <td><label for="name">Trade Time</label></td>
+                                            <td></td>
+                                            <td>
+                                            </td>
+                                            <td></td>
+                                            <td>
+                                            </td>
+                                            <td></td>
+                                            <td>
+                                            </td>
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="height: 20px;padding-top: 0px;padding-bottom: 0px;max-width: 300px;" class="form-control"
+                                                    value="{{Overview[0][11]}}" name="name"></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><input type="text" style="max-width: 300px;" class="form-control"
+                                                    value="{{Overview[0][7]}}" name="name" readonly></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><input type="text" style="max-width: 300px;" class="form-control"
+                                                    value="{{Overview[0][9]}}" name="name" readonly></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><input type="text" style="max-width: 300px;" class="form-control"
+                                                    value="{{Overview[0][10]}}" name="name" readonly></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td>
+                                            </td>
+                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td>
+                                            </td>
+                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td>
+                                            </td>
+                                        </tr>
+    
+    
+                                        <tr>
+                                            <td><label for="name">ISNVCUSIP MIKIN</label></td>
+                                            <td></td>
+                                            <td><label for="name">Currency</label></td>
+                                            <td></td>
+                                            <td><label for="name">Turnover In EUR</label></td>
+                                            <td></td>
+                                            <td><label for="name">Amend Time</label></td>
+                                            <td></td>
+                                            <td>
+                                            </td>
+                                            <td></td>
+                                            <td>
+                                            </td>
+                                            <td></td>
+                                            <td>
+                                            </td>
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 300px;" class="form-control"
+                                                    value="{{Overview[0][4]}}" name="name"></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><input type="text" style="width: 300px;" class="form-control"
+                                                    value="{{Overview[0][3]}}" name="name" readonly></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><input type="text" style="width: 300px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><input type="text" style="width: 300px;" class="form-control"
+                                                    value="{{Overview[0][8]}}" name="name" readonly></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td>
+                                            </td>
+                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td>
+                                            </td>
+                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td>
+                                            </td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><label for="name">Structure</label></td>
+                                            <td></td>
+                                            <td><label for="name">Maturity Date</label></td>
+                                            <td></td>
+                                            <td><label for="name">Trade ID</label></td>
+                                            <td></td>
+                                            <td><label for="name">Trader Name</label></td>
+                                            <td></td>
+                                            <td colspan="5">
+                                            </td>
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 300px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><input type="text" style="width: 300px;" class="form-control"
+                                                    value="{{Overview[0][12]}}" name="name" readonly></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><input type="text" style="width: 300px;" class="form-control"
+                                                    value="{{Overview[0][22]}}" name="name"></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><input type="text" style="width: 300px;" class="form-control"
+                                                    value="{{Overview[0][6]}}" name="name" readonly></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td colspan="5">
+                                            </td>
+    
+    
+                                        </tr>
+    
+                                        <tr>
+                                            <td><label for="name">Category</label></td>
+                                            <td></td>
+                                            <td><label for="name">Book</label></td>
+                                            <td></td>
+                                            <td><label for="name">Trade State</label></td>
+                                            <td></td>
+                                            <td colspan="5"><label for="name">Updated By</label></td>
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 300px;" class="form-control"
+                                                    value="{{Overview[0][14]}}" name="name" readonly></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><input type="text" style="width: 300px;" class="form-control"
+                                                    value="{{Overview[0][1]}}" name="name" readonly></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><input type="text" style="width: 300px;" class="form-control"
+                                                    value="{{Overview[0][15]}}" name="name" readonly></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td colspan="5"><input type="text" style="width: 300px;" class="form-control"
+                                                    value="{{Overview[0][16]}}" name="name" readonly></td>
+    
+    
+                                        </tr>
+    
+                                        <tr style="padding-top: 20%;">
+                                            <td><label for="name">Sub Type</label></td>
+                                            <td></td>
+                                            <td><label for="name">CounterParty</label></td>
+                                            <td></td>
+                                            <td colspan="5"><label for="name">Description/Notes</label></td>
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 300px;" class="form-control"
+                                                    value="{{Overview[0][17]}}" name="name" readonly></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><input type="text" style="width: 300px;" class="form-control"
+                                                    value="{{Overview[0][2]}}" name="name" readonly></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td colspan="5"><textarea class="span6" rows="1" cols="52" readonly>
+    
+                                            </textarea></td>
+    
+    
+                                        </tr>
+    
+                                    </table>
+    
+                                </section>
+    
+                            </div>
+    
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="text-align: center;width:100%;font-size:12px;padding: 0.1px;font-weight: bold">Market
+                                    data</div>
+                                <div class="panel-body" style="font-size:12px;">
+                                    <section>
+                                        <table class="Bond">
+                                            <tr>
+                                                <td><label for="name">Source</label></td>
+                                                <td></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td>&nbsp;&nbsp;</td>
+    
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" style="width: 300px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td>&nbsp;&nbsp;</td>
+    
+                                            </tr>
+    
+    
+                                            <tr>
+                                                <td><label for="name">Market Price Time</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><label for="name">Min Price</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><label for="name">Max Price</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td>&nbsp;&nbsp;</td>
+    
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" style="width: 300px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><input type="text" style="width: 300px;" class="form-control"
+                                                        value="{{Overview[1][3]}}" name="name" readonly></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><input type="text" style="width: 300px;" class="form-control"
+                                                        value="{{Overview[1][4]}}" name="name" readonly></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td>&nbsp;&nbsp;</td>
+    
+                                            </tr>
+    
+                                            <tr>
+                                                <td><label for="name">Difference</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><label for="name">Tolerance</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><label for="name">Theoretic Price</label></td>
+    
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" style="width: 300px;" class="form-control"
+                                                        value="{{Overview[1][2]}}" name="name" readonly></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><input type="text" style="width: 300px;" class="form-control"
+                                                        value="" name="name" readonly></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><input type="text" style="width: 300px;" class="form-control"
+                                                        value="" name="name" readonly></td>
+    
+                                            </tr>
+                                        </table>
+    
+                                    </section>
+    
+    
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="text-align: center;width:100%;font-size:12px; padding: 0.1px;font-weight: bold">Check
+                                    result</div>
+                                <div class="panel-body" style="font-size:12px;">
+                                    <section>
+                                        <table class="Bond">
+                                            <tr>
+                                                <td><label for="name">Automatic</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><label for="name">Manual</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td>&nbsp;&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" style="width: 300px;" class="form-control"
+                                                        value="{{Overview[2][0]}}" name="name" readonly></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td *ngIf="!editFlag"><input type="text" 
+                                                        class="form-control" value="{{Overview[2][2]}}" style="width: 300px;"name="name" readonly></td>
+                                                <td *ngIf="editFlag" >
+                                                    <select class="browser-default custom-select"
+                                                        [(ngModel)]="selectedResultValue" style="width: 300px;font-size: 15px;height: 25px;padding-top: 0px;padding-bottom: 1px;">
+                                                        <option>--Select--</option>
+                                                        <option *ngFor="let Result of ResultField">{{Result}}</option>
+                                                       
+                                                    </select>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><button type="button" class="btn btn-default btn-sm"
+                                                        style="height: 20px;padding-top: none;"
+                                                        (click)="EditAndSave()"><span class="glyphicon glyphicon-pencil"
+                                                            style="padding-bottom: none;"></span></button></td>
+    
+                                                
+                                                <td>&nbsp;&nbsp;</td>
+    
+                                            </tr>
+    
+                                            <tr>
+                                                <td><label for="name">Manual State By</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><label for="name">Manual State Comment</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td>&nbsp;&nbsp;</td>
+    
+                                            </tr>
+                                            <tr>
+                                                <td *ngIf="!editFlag"><input type="text" style="width: 300px;"
+                                                        class="form-control" value="{{Overview[2][3]}}" name="name" readonly></td>
+                                                <td *ngIf="editFlag"><input type="text" style="width: 300px;"
+                                                        class="form-control" value="{{LoggedInUser}}" name="name"></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td *ngIf="!editFlag">
+                                                    <textarea name="" id="" cols="52" rows="1" value='{{Overview[2][4]}}' readonly></textarea>
+                                                </td>
+                                                <td *ngIf="editFlag">
+                                                    <textarea (input)="tcode=$event.target.value" name="" id="" cols="52"
+                                                        rows="1"></textarea>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <!-- <td *ngIf="editFlag" >
+                                                    <label for="file">Choose File</label>
+                                                    <input type="file" id="file" style="width: 100px;" (change)="fileEvent($event.target.files)" />
+                                                </td> -->
+                                                <!-- <td *ngIf="editFlag">
+                                                    <input type="text" style="width:100px" value="{{fileToUpload.name}}"/>
+                                                        <input type="file" style="width:100px" (change)="fileEvent($event.target.files)"/>
+                                                        <span>My Label</span>
+                                                </td> -->
+                                                <td *ngIf="editFlag">
+                                                    <input type="file" id="myFile" style="width:auto" name="file" (change)="fileEvent($event.target.files)">
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td *ngIf="editFlag"><button mat-raised-button color="primary"
+                                                        (click)="Save()">Save</button></td>
+    
+    
+    
+                                            </tr>
+                                        </table>
+    
+                                    </section>
+    
+    
+    
+    
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+    
+    
+            <div class="test-container"
+                *ngIf="[Mandant].toString()=='Derivate EAA' || [Mandant].toString()=='Derivative CBB' || [Mandant].toString()=='Derivative PAG'"
+                style="width:92%;margin-left: 5%;">
+                <div class="Display">
+                    <div>
+                        <div class="panel panel-default" style="position: relative;min-width: 1500px;">
+                            <div class="panel-heading"
+                                style="text-align: center;font-size:14px; width:100%;padding: 0.1px;font-weight: bold">Trade</div>
+                            <div class="panel-body" style="font-size:14px;width: 90%;">
+    
+                                <section>
+                                    <table class="Derivative" style="position: relative;">
+    
+                                        <tr>
+                                            <td><label for="name">Trade ID</label></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><label for="name">Deal ID</label></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><label for="name">Structure ID</label></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><label for="name">Trade Type</label></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td><label for="name">Instrument</label></td>
+    
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 290px;" class="form-control"
+                                                    value="{{Overview[0][22]}}" name="name"></td>
+                                            <td></td>
+                                            <td><input type="text" style="width: 290px;" class="form-control" value=""
+                                                    name="name"></td>
+                                            <td></td>
+                                            <td><input type="text" style="width: 290px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+                                            <td></td>
+                                            <td><input type="text" style="width: 290px;" class="form-control"
+                                                    value="{{Overview[0][4]}}" name="name" readonly></td>
+                                            <td></td>
+                                            <td><input type="text" style="width: 290px;" class="form-control"
+                                                    value="{{Overview[0][4]}}" name="name"></td>
+    
+    
+                                        </tr>
+    
+    
+                                        <tr>
+                                            <td><label for="name">Trader ID</label></td>
+                                            <td></td>
+                                            <td><label for="name">Trader Name</label></td>
+                                            <td></td>
+                                            <td><label for="name">Book</label></td>
+                                            <td></td>
+                                            <td><label for="name">Company</label></td>
+                                            <td></td>
+                                            <td><label for="name">Comment</label></td>
+    
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 290px;" class="form-control"
+                                                    value="{{Overview[0][5]}}" name="name" readonly></td>
+                                            <td></td>
+                                            <td><input type="text" style="width: 290px;" class="form-control"
+                                                    value="{{Overview[0][6]}}" name="name" readonly></td>
+                                            <td></td>
+                                            <td><input type="text" style="width: 290px;" class="form-control"
+                                                    value="{{Overview[0][1]}}" name="name" readonly></td>
+                                            <td></td>
+                                            <td><input type="text" style="width: 290px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+                                            <td></td>
+                                            <td> <textarea name="" id="" cols="40" rows="1" readonly></textarea></td>
+    
+                                        </tr>
+    
+                                        <tr>
+                                            <td><label for="name">Trade Date</label></td>
+                                            <td></td>
+                                            <td><label for="name">Amend Date</label></td>
+                                            <td></td>
+    
+                                            <td><label for="name">CounterParty</label></td>
+                                            <td></td>
+                                            <td><label for="name"></label> <br>
+                                            </td>
+                                            <td></td>
+                                            <td><label for="name"></label></td>
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 290px;" class="form-control"
+                                                    value="{{Overview[0][10]}}" name="name" readonly></td>
+                                            <td></td>
+                                            <td><input type="text" style="width: 290px;" class="form-control"
+                                                    value="{{Overview[0][8]}}" name="name" readonly></td>
+                                            <td></td>
+                                            <td><input type="text" style="width: 290px;" class="form-control"
+                                                    value="{{Overview[0][2]}}" name="name" readonly></td>
+                                            <td>&nbsp;&nbsp;</td>
+                                            <td>
+                                                <!-- <label>Internal<input type="checkbox"></label> -->
+                                                <input  type="checkbox" id="checkbox"
+                                                        style="text-align: none;display:inline-block;width: 13px; 
+                                                        height: 13px; " />
+                                                    &nbsp;
+                                                    <label for="checkbox" >Internal</label>
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td>
+                                                <!-- <label>Amended<input type="checkbox"></label> -->
+                                                <input  type="checkbox" id="checkbox"
+                                                style="text-align: none;display:inline-block;width: 13px; 
+                                                height: 13px; " />
+                                            &nbsp;
+                                            <label for="checkbox" >Amended</label>
+                                            </td>
+    
+                                        </tr>
+    
+                                    </table>
+                                </section>
+    
+                            </div>
+    
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="text-align: center;font-size:14px; padding: 0.1px;font-weight: bold">Market
+                                    data</div>
+                                <div class="panel-body" style="font-size:14px;">
+                                    <section>
+                                        <table class="Derivative">
+                                            <tr>
+                                                <td><label for="name">NPV</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+    
+                                                <td><label for="name">Vega</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><label for="name">Delta</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><label for="name">Premium</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><label for="name">Notional</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><label for="name">Turnover</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><label for="name">Deviation</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><label for="name">Tolerance</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><label for="name">NPV Change</label></td>
+    
+    
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" style="width:157px;" class="form-control"
+                                                        value="{{Overview[1][0]}}" name="name" readonly></td>
+                                                <td></td>
+                                                <td><input type="text" style="width: 157px;" class="form-control"
+                                                        value="{{Overview[1][1]}}" name="name" readonly></td>
+                                                <td></td>
+                                                <td><input type="text" style="width: 157px;" class="form-control"
+                                                        value="{{Overview[1][2]}}" name="name" readonly></td>
+                                                <td></td>
+                                                <td><input type="text" style="width: 157px;" class="form-control"
+                                                        value="{{Overview[1][3]}}" name="name" readonly></td>
+                                                <td></td>
+                                                <td><input type="text" style="width: 157px;" class="form-control"
+                                                        value="{{Overview[1][4]}}" name="name" readonly></td>
+                                                <td></td>
+                                                <td><input type="text" style="width: 157px;" class="form-control"
+                                                        value="{{Overview[1][5]}}" name="name" readonly></td>
+                                                <td></td>
+                                                <td><input type="text" style="width: 157px;" class="form-control"
+                                                        value="{{Overview[1][6]}}" name="name" readonly></td>
+                                                <td></td>
+                                                <td><input type="text" style="width: 157px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+                                                <td></td>
+                                                <td><input type="text" style="width: 157px;" class="form-control"
+                                                        value="{{Overview[1][7]}}" name="name" readonly></td>
+    
+                                            </tr>
+                                           
+    
+                                        </table>
+    
+                                    </section>
+    
+    
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="text-align: center;font-size:14px; padding: 0.1px;font-weight: bold">Check
+                                    result</div>
+                                <div class="panel-body" style="font-size:14px;">
+                                    <section>
+                                        <table class="Derivative">
+                                            <tr>
+                                                <td><label for="name">Automatic</label></td>
+                                                <td></td>
+                                                <td><label for="name">Manual</label></td>
+                                                <td></td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" style="width: 450px;" class="form-control"
+                                                        value="{{Overview[2][0]}}" name="name" readonly></td>
+                                                <td></td>
+                                                <td *ngIf="!editFlag"><input type="text" style="width: 410px;"
+                                                        class="form-control" value="{{Overview[2][2]}}" name="name" readonly></td>
+                                                <td *ngIf="editFlag" style="width: 410px;">
+                                                    <select class="browser-default custom-select"
+                                                        [(ngModel)]="selectedResultValue" style="font-size: 15px;height: 25px;padding-top: 0px;padding-bottom: 1px;">
+                                                        <option *ngFor="let Result of ResultField">{{Result}}</option>
+                                                       
+                                                    </select>
+                                                </td>
+                                                <td></td>
+                                                
+                                                <td><button type="button" class="btn btn-default btn-sm"
+                                                        style="height: 20px;padding-top: none;"
+                                                        (click)="EditAndSave()"><span class="glyphicon glyphicon-pencil"
+                                                            style="padding-bottom: none;"></span></button></td>
+                                                <td></td>
+                                                
+    
+                                            </tr>
+    
+                                            <tr>
+                                                <td><label for="name">Manual State By</label></td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td><label for="name">Manual State Comment</label></td>
+                                                <td></td>
+                                                <td></td>
+    
+    
+                                            </tr>
+                                            <tr>
+                                                <td *ngIf="editFlag"><input type="text" style="width: 450px;"
+                                                        class="form-control" value="{{LoggedInUser}}" name="name"></td>
+                                                <td *ngIf="!editFlag"><input type="text" style="width: 450px;"
+                                                        class="form-control" value="{{Overview[2][3]}}" name="name" readonly></td>
+                                                <td></td>
+                                                <td *ngIf="!editFlag">
+                                                    <textarea name="" id="" cols="72" rows="1" value="{{Overview[2][4]}}" readonly></textarea>
+                                                </td>
+                                                <td *ngIf="editFlag">
+                                                    <textarea (input)="tcode=$event.target.value" name="" id="" cols="72"
+                                                        rows="1" value=""></textarea>
+                                                </td>
+                                                <td>&nbsp;&nbsp;</td>
+                                                <td *ngIf="editFlag">
+                                                    <input type="file" id="myFile" style="width:auto" name="file" (change)="fileEvent($event.target.files)">
+                                                </td>
+                                                <td></td>
+                                                <td *ngIf="editFlag"><button mat-raised-button color="primary"
+                                                        (click)="Save()">Save</button></td>
+    
+    
+                                            </tr>
+                                        </table>
+    
+                                    </section>
+    
+    
+    
+    
+    
+                                </div>
+                            </div>
+    
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="text-align: center;font-size:14px;padding: 0.1px;font-weight: bold">Assets
+                                </div>
+                                <div class="panel-body" style="font-size:14px;">
+    
+                                    <table id="customers" >
+                                        <tr height='1' size='2' style="font-size: 12px;">
+                                            <th>Asset ID</th>
+                                            <th>Sub Type</th>
+                                            <th>call/put</th>
+                                            <th>Pay Notional</th>
+                                            <th>Pay Currency</th>
+                                            <th>Pay Index Basis </th>
+                                            <th>Pay Rate Spread</th>
+                                            <th>Pay Discount curve</th>
+                                            <th>Receive Notional</th>
+                                            <th>Receive Index Basis </th>
+                                            <th>Receive Rate Spread</th>
+                                            <th>Receive Discount Curve</th>
+                                            <th>Cap/Floor</th>
+                                            <th>Buy/Sell</th>
+                                            <th>Quantity</th>
+                                            <th>Underlying</th>
+                                            <th>Strike</th>
+                                            <th>Style</th> 
+    
+    
+                                        </tr>
+                                        <tr *ngFor="let assets of assetsData" height='1'  size='2' style="font-size: 12px;">
+                                            <td *ngFor="let asset of assets" >
+                                                {{asset}}
+                                            </td>
+    
+    
+                                        </tr>
+                                    </table>
+    
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="test-container"
+                *ngIf="[Mandant].toString()=='MoneyMarket EAA'"
+                style="width:92%;margin-left: 5%;margin-top: 10px;">
+                <div class="Display">
+                    <div>
+    
+                        <div class="panel panel-default" style="position: relative;min-width: 1500px;">
+                            <div class="panel-heading"
+                                style="text-align: center;font-size:12px; width:100%;padding: 0.1px;font-weight: bold">Trade</div>
+                            <div class="panel-body" style="font-size:12px;width: 90%;">
+    
+                                <section>
+                                    <table class="MoneyMarket" style="position: relative;">
+    
+                                        <tr>
+                                            <td><label for="name">Commodity</label></td>
+    
+                                            <td><label for="name">Trade Type</label></td>
+    
+                                            <td><label for="name">Price</label></td>
+    
+                                            <td><label for="name">Price Tolerance</label></td>
+    
+                                            <td><label for="name">Price Difference</label></td>
+    
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 285px;"
+                                                    class="form-control" value="{{Overview[0][4]}}" name="name" readonly>
+                                            </td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+                                        </tr>
+    
+                                        
+    
+                                        <tr>
+                                            <td><label for="name">Near Date</label></td>
+    
+                                            <td><label for="name">Near Amount</label></td>
+    
+                                            <td><label for="name">Near Forward Points</label></td>
+    
+                                            <td><label for="name">Market Rate Near</label></td>
+    
+                                            <td><label for="name">Near Turnover</label></td>
+    
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+                                        </tr>
+    
+                                      
+    
+                                        <tr>
+                                            <td><label for="name">Far Date</label></td>
+    
+                                            <td><label for="name">Far Amount</label></td>
+    
+                                            <td><label for="name">Far Forward Points</label></td>
+    
+                                            <td><label for="name">Market Rate Far</label></td>
+    
+                                            <td><label for="name">Far Turnover</label></td>
+    
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+                                        </tr>
+    
+                                        
+    
+                                        <tr>
+                                            <td><label for="name">Trade ID</label></td>
+    
+                                            <td><label for="name">Record Type</label></td>
+    
+                                            <td><label for="name">Trade Time</label></td>
+    
+                                            <td><label for="name">System Time</label></td>
+    
+                                            <td><label for="name">Turnover In EUR</label></td>
+    
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][22]}}" name="name"></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][10]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][10]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+                                        </tr>
+    
+                                        
+    
+                                        <tr>
+                                            <td><label for="name">Trader Name</label></td>
+    
+                                            <td><label for="name">Counter Party</label></td>
+    
+                                            <td><label for="name">Book</label></td>
+    
+                                            <td><label for="name">Margin Points</label></td>
+    
+                                            <td><label for="name">EOD Rate</label></td>
+    
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][6]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][2]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][1]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+                                        </tr>
+    
+    
+                                       
+    
+                                        <tr>
+                                            <td><label for="name">Amend Date</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][8]}}" name="name" readonly></td>
+                                        </tr>
+    
+                                        <tr>
+                                            <td><label for="name">Memo</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4"><input type="text" style="width: 515px;" class="form-control"
+                                                    value="" name="name" readonly></td>
+                                        </tr>
+                                    </table>
+    
+                                </section>
+    
+                            </div>
+    
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="text-align: center;font-size:12px;padding: 0.1px;font-weight: bold">Market
+                                    data</div>
+                                <div class="panel-body" style="font-size:12px;">
+                                    <section>
+                                        <table class="MoneyMarket">
+                                            <tr>
+                                                <td><label for="name">Source</label></td>
+    
+                                                <td><label for="name">Request String</label></td>
+    
+    
+    
+                                                <td><label for="name">Request Date</label></td>
+    
+    
+    
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" style="width: 310px;" class="form-control" value=""
+                                                        name="name" value="" readonly></td>
+    
+                                                <td><input type="text" style="width: 310px;" class="form-control" value=""
+                                                        name="name" value="{{Overview[1][0]}}"  readonly></td>
+    
+    
+    
+                                                <td><input type="text" style="width: 310px;" class="form-control" value=""
+                                                        name="name" value="{{Overview[1][1]}}" readonly></td>
+    
+    
+                                            </tr>
+    
+    
+                                            <tr>
+                                                <td><label for="name">Time</label></td>
+    
+                                                <td><label for="name">Price</label></td>
+    
+                                                <td><label for="name">Price</label></td>
+    
+                                                <td><label for="name">EndOfDay Price</label></td>
+    
+    
+    
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" style="width: 310px;" class="form-control" value=""
+                                                        name="name" value="{{Overview[1][2]}}" readonly></td>
+    
+                                                <td><input type="text" style="width: 310px;" class="form-control" value=""
+                                                        name="name" value="{{Overview[1][3]}}" readonly></td>
+    
+                                                <td><input type="text" style="width: 310px;" class="form-control" value=""
+                                                        name="name" value="{{Overview[1][4]}}" readonly></td>
+    
+                                                <td><input type="text" style="width: 310px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+    
+    
+                                            </tr>
+    
+    
+                                           
+                                        </table>
+    
+                                    </section>
+    
+    
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="text-align: center;font-size:12px; padding: 0.1px;font-weight: bold">Check
+                                    result</div>
+                                <div class="panel-body" style="font-size:12px;">
+                                    <section>
+                                        <table class="MoneyMarket">
+    
+                                            <tr>
+                                                <td><label for="name">Automatic</label></td>
+    
+                                                <td><label for="name">Manual</label></td>
+                                                <td></td>
+                                                <td></td>
+                                                
+    
+    
+    
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" style="width: 310px;" class="form-control" value="{{Overview[2][0]}}"
+                                                        name="name" readonly></td>
+    
+                                                <td *ngIf="!editFlag"><input type="text" style="width: 310px;"
+                                                        class="form-control" value="{{Overview[2][2]}}" name="name" readonly></td>
+                                                <td *ngIf="editFlag">
+                                                    <select class="browser-default custom-select"
+                                                        [(ngModel)]="selectedResultValue" style="font-size: 15px;width: 310px;height: 25px;padding-top: 0px;padding-bottom: 1px;">
+                                                        <option *ngFor="let Result of ResultField">{{Result}}</option>
+                                                    </select>
+                                                </td>
+    
+                                                <td> <button type="button" class="btn btn-default btn-sm"
+                                                        style="height: 20px;padding-top: none;"
+                                                        (click)="EditAndSave()"><span
+                                                            class="glyphicon glyphicon-pencil"></span></button></td>
+                                                <td></td>
+                                                
+    
+    
+                                            </tr>
+    
+    
+                                            <tr>
+                                                <td><label for="name">Manual State By</label></td>
+    
+                                                <td colspan="4"><label for="name">Manual State Comment</label></td>
+    
+    
+    
+                                            </tr>
+                                            <tr>
+                                                <td *ngIf="!editFlag"><input type="text" style="width: 310px;"
+                                                        class="form-control" value="{{Overview[2][3]}}" name="name" readonly></td>
+                                                <td *ngIf="editFlag"><input type="text" style="width: 310px;"
+                                                        class="form-control" value="{{LoggedInUser}}" name="name" readonly></td>
+    
+                                                <td colspan="4" *ngIf="!editFlag">
+                                                    <textarea class="span6" rows="0" cols="52"
+                                                        style="height:40px;" value='{{Overview[2][4]}}' readonly></textarea>
+                                                </td>
+                                                <td *ngIf="editFlag">
+                                                    <textarea (input)="tcode=$event.target.value" name="" id="" cols="52"
+                                                        rows="0"></textarea>
+                                                </td>
+                                                <td *ngIf="editFlag">
+                                                    <input type="file" id="myFile" style="width:auto" name="file" (change)="fileEvent($event.target.files)">
+                                                </td>
+                                                <td></td>
+                                                <td *ngIf="editFlag"><button mat-raised-button color="primary"
+                                                        (click)="Save()">Save</button></td>
+                                            </tr>
+    
+                                        </table>
+    
+                                    </section>
+    
+    
+    
+    
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+            
+            <div class="test-container" *ngIf=" [Mandant].toString()=='MoneyMarket CBB' "
+                style="width:92%;margin-left: 5%;margin-top: 10px;">
+                <div class="Display">
+                    <div>
+    
+                        <div class="panel panel-default" style="position: relative;min-width: 1500px;">
+                            <div class="panel-heading"
+                                style="text-align: center;font-size:12px; width:100%;padding: 0.1px;font-weight: bold">Trade</div>
+                            <div class="panel-body" style="font-size:12px;width: 90%;">
+    
+                                <section>
+                                    <table class="MoneyMarket" style="position: relative;">
+    
+                                        <tr>
+                                            <td><label for="name">Comodity</label></td>
+    
+                                            <td><label for="name">Trade Type</label></td>
+    
+                                            <td><label for="name">Price</label></td>
+    
+                                            <td><label for="name">Volume</label></td>
+    
+                                            <td><label for="name">TurnOver In EUR</label></td>
+    
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][4]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[1][6]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][7]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[1][4]}}" name="name" readonly></td>
+                                        </tr>
+    
+    
+                                        <tr>
+                                            <td><label for="name">Trade ID</label></td>
+    
+                                            <td><label for="name">Trade Name</label></td>
+    
+                                            <td><label for="name">Trade Time</label></td>
+    
+                                            <td><label for="name">Price Tolerance</label></td>
+    
+                                            <td><label for="name">Price Difference</label></td>
+    
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][22]}}" name="name"></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][5]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][10]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[1][5]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[1][0]}}" name="name" readonly></td>
+                                        </tr>
+    
+                                       
+    
+                                        <tr>
+                                            <td><label for="name">Group ID</label></td>
+    
+                                            <td><label for="name">Record Type</label></td>
+    
+                                            <td><label for="name">System Time</label></td>
+    
+                                            <td><label for="name">CounterParty</label></td>
+    
+                                            <td><label for="name">Book</label></td>
+    
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][6]}}" name="name"></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][2]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][10]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][2]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][1]}}" name="name" readonly></td>
+                                        </tr>
+    
+    
+                                       
+                                        <tr>
+                                            <td><label for="name">Memo</label></td>
+    
+                                            <td><label for="name">Location</label></td>
+    
+                                            <td><label for="name">Local Report</label></td>
+    
+                                            <td><label for="name">Margin Points</label></td>
+    
+                                            <td><label for="name">Maturity Date</label></td>
+    
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][6]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][21]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][0]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+                                        </tr>
+    
+    
+                                        <tr>
+                                            <td style="padding-bottom: 10px;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="name">EOD Rate</label></td>
+                                            <td><label for="name">Amend Date</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][8]}}" name="name" readonly></td>
+                                        </tr>
+                                    </table>
+    
+                                </section>
+    
+                            </div>
+    
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="text-align: center;font-size:12px;padding: 0.1px;font-weight: bold">Market
+                                    data</div>
+                                <div class="panel-body" style="font-size:12px;">
+                                    <section>
+                                        <table class="MoneyMarket">
+                                            <tr>
+                                                <td><label for="name">Source</label></td>
+    
+                                                <td><label for="name">Request String</label></td>
+    
+    
+    
+                                                <td><label for="name">Request Date</label></td>
+    
+    
+    
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" style="width: 310px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+    
+                                                <td><input type="text" style="width: 310px;" class="form-control"
+                                                        value="" name="name" readonly></td>
+    
+    
+    
+                                                <td><input type="text" style="width: 310px;" class="form-control"
+                                                        value="" name="name" readonly></td>
+    
+    
+                                            </tr>
+    
+    
+                                            <tr>
+                                                <td><label for="name">Time</label></td>
+    
+                                                <td><label for="name">Price</label></td>
+    
+                                                <td><label for="name">Price</label></td>
+    
+                                                <td><label for="name">EndOfDay Price</label></td>
+    
+    
+    
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" style="width: 310px;" class="form-control"
+                                                        value="" name="name" readonly></td>
+    
+                                                <td><input type="text" style="width: 310px;" class="form-control"
+                                                        value="" name="name" readonly></td>
+    
+                                                <td><input type="text" style="width: 310px;" class="form-control"
+                                                        value="" name="name" readonly></td>
+    
+                                                <td><input type="text" style="width: 310px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+    
+    
+                                            </tr>
+    
+    
+                                        </table>
+    
+                                    </section>
+    
+    
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="text-align: center;font-size:12px; padding: 0.1px;font-weight: bold">Check
+                                    result</div>
+                                <div class="panel-body" style="font-size:12px;">
+                                    <section>
+                                        <table class="MoneyMarket">
+    
+                                            <tr>
+                                                <td><label for="name">Automatic</label></td>
+    
+                                                <td><label for="name">Manual</label></td>
+                                                
+                                                
+    
+    
+    
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" style="width: 310px;" class="form-control" value=""
+                                                        name="name" value="{{Overview[1][0]}}" readonly></td>
+    
+                                                <td *ngIf="!editFlag"><input type="text" style="width: 320px;"
+                                                        class="form-control" value="{{Overview[1][2]}}"  name="name" readonly></td>
+                                                <td *ngIf="editFlag">
+                                                    <select class="browser-default custom-select"
+                                                        [(ngModel)]="selectedResultValue" style="font-size: 15px;width: 320px;height: 25px;padding-top: 0px;padding-bottom: 1px;">
+                                                        <option *ngFor="let Result of ResultField">{{Result}}</option>
+                                                    </select>
+                                                </td>
+    
+                                                <td> <button type="button" class="btn btn-default btn-sm"
+                                                        style="height: 20px;padding-top: none;"
+                                                        (click)="EditAndSave()"><span
+                                                            class="glyphicon glyphicon-pencil"></span></button></td>
+                                                
+                                                
+                                                
+                                            </tr>
+    
+    
+                                          
+                                            <tr>
+                                                <td><label for="name">Manual State By</label></td>
+    
+                                                <td colspan="4"><label for="name">Manual State Comment</label></td>
+    
+    
+    
+                                            </tr>
+                                            <tr>
+                                                <td *ngIf="!editFlag"><input type="text" style="width: 310px;"
+                                                        class="form-control" value="{{Overview[1][3]}}" name="name" readonly></td>
+                                                <td *ngIf="editFlag"><input type="text" style="width: 310px;"
+                                                        class="form-control" value="{{LoggedInUser}}" name="name"></td>
+    
+                                                <td colspan="4" *ngIf="!editFlag">
+                                                    <textarea class="span6" rows="0" cols="55"
+                                                        style="height:40px;" value="{{Overview[1][4]}}" readonly></textarea>
+                                                </td>
+                                                <td *ngIf="editFlag">
+                                                    <textarea (input)="tcode=$event.target.value" name="" id="" cols="50"
+                                                        rows="0"></textarea>
+                                                </td>
+                                                <td *ngIf="editFlag">
+                                                    <input type="file" id="myFile" style="width:auto" name="file" (change)="fileEvent($event.target.files)">
+                                                </td>
+                                                <td></td>
+                                                <td *ngIf="editFlag"><button mat-raised-button color="primary"
+                                                        (click)="Save()">Save</button></td>
+    
+                                            </tr>
+    
+                                        </table>
+    
+                                    </section>
+    
+    
+    
+    
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        <div class="test-container" *ngIf=" [Mandant].toString()=='MoneyMarket PAG' "
+            style="width:92%;margin-left: 5%;margin-top: 10px;">
+            <div class="Display">
+                <div>
+    
+                    <div class="panel panel-default" style="position: relative;min-width: 1500px;">
+                        <div class="panel-heading"
+                            style="text-align: center;font-size:12px; width:100%;padding: 0.1px;font-weight: bold">Trade</div>
+                        <div class="panel-body" style="font-size:12px;width: 90%;">
+    
+                            <section>
+                                <table class="MoneyMarket" style="position: relative;">
+    
+                                    <tr>
+                                        <td><label for="name">Comodity</label></td>
+    
+                                        <td><label for="name">Trade Type</label></td>
+    
+                                        <td><label for="name">Price</label></td>
+    
+                                        <td><label for="name">Volume</label></td>
+    
+                                        <td><label for="name">TurnOver In EUR</label></td>
+    
+    
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[0][4]}}" name="name" readonly></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                name="name" readonly></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[1][6]}}" name="name" readonly></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[0][7]}}" name="name" readonly></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[1][4]}}" name="name" readonly></td>
+                                    </tr>
+    
+                                   
+    
+                                    <tr>
+                                        <td><label for="name">Trade ID</label></td>
+    
+                                        <td><label for="name">Trade Name</label></td>
+    
+                                        <td><label for="name">Trade Time</label></td>
+    
+                                        <td><label for="name">Price Tolerance</label></td>
+    
+                                        <td><label for="name">Price Difference</label></td>
+    
+    
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[0][22]}}" name="name"></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[0][5]}}" name="name" readonly></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[0][10]}}" name="name" readonly></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[1][5]}}" name="name" readonly></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[1][0]}}" name="name" readonly></td>
+                                    </tr>
+    
+                                   
+                                    <tr>
+                                        <td><label for="name">Group ID</label></td>
+    
+                                        <td><label for="name">Record Type</label></td>
+    
+                                        <td><label for="name">System Time</label></td>
+    
+                                        <td><label for="name">CounterParty</label></td>
+    
+                                        <td><label for="name">Book</label></td>
+    
+    
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[0][6]}}" name="name"></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[0][2]}}" name="name" readonly></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[0][10]}}" name="name" readonly></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[0][2]}}" name="name" readonly></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[0][1]}}" name="name" readonly></td>
+                                    </tr>
+    
+    
+                                    
+                                    <tr>
+                                        <td><label for="name">Memo</label></td>
+    
+                                        <td><label for="name">Location</label></td>
+    
+                                        <td><label for="name">Local Report</label></td>
+    
+                                        <td><label for="name">Margin Points</label></td>
+    
+                                        <td><label for="name">Maturity Date</label></td>
+    
+    
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[0][6]}}" name="name" readonly></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[0][21]}}" name="name" readonly></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[0][0]}}" name="name" readonly></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                name="name" readonly></td>
+    
+                                        <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                name="name" readonly></td>
+                                    </tr>
+    
+    
+                                    <tr>
+                                        <td><label for="name">EOD Rate</label></td>
+                                        <td><label for="name">Amend Date</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                name="name" readonly></td>
+                                        <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[0][8]}}" name="name" readonly></td>
+                                    </tr>
+                                </table>
+    
+                            </section>
+    
+                        </div>
+    
+                        <div class="panel panel-default">
+                            <div class="panel-heading" style="text-align: center;font-size:12px;padding: 0.1px;font-weight: bold">Market
+                                data</div>
+                            <div class="panel-body" style="font-size:12px;">
+                                <section>
+                                    <table class="MoneyMarket">
+                                        <tr>
+                                            <td><label for="name">Source</label></td>
+    
+                                            <td><label for="name">Request String</label></td>
+    
+    
+    
+                                            <td><label for="name">Request Date</label></td>
+    
+    
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 310px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 310px;" class="form-control"
+                                                value="{{Overview[1][0]}}" name="name" readonly></td>
+    
+    
+    
+                                            <td><input type="text" style="width: 310px;" class="form-control"
+                                                value="{{Overview[1][1]}}" name="name" readonly></td>
+    
+    
+                                        </tr>
+    
+    
+                                       
+    
+                                        <tr>
+                                            <td><label for="name">Time</label></td>
+    
+                                            <td><label for="name">Price</label></td>
+    
+                                            <td><label for="name">Price</label></td>
+    
+                                            <td><label for="name">EndOfDay Price</label></td>
+    
+    
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 310px;" class="form-control"
+                                                value="{{Overview[1][2]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 310px;" class="form-control"
+                                                value="{{Overview[1][3]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 310px;" class="form-control"
+                                                value="{{Overview[1][4]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 310px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+    
+                                        </tr>
+    
+    
+                                    </table>
+    
+                                </section>
+    
+    
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" style="text-align: center;font-size:12px; padding: 0.1px;font-weight: bold">Check
+                                result</div>
+                            <div class="panel-body" style="font-size:12px;">
+                                <section>
+                                    <table class="MoneyMarket">
+    
+                                        <tr>
+                                            <td><label for="name">Automatic</label></td>
+    
+                                            <td><label for="name">Manual</label></td>
+                                            
+                                            
+    
+    
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 310px;" class="form-control" value=""
+                                                    name="name" value="{{Overview[2][0]}}" readonly></td>
+    
+                                            <td *ngIf="!editFlag"><input type="text" style="width: 310px;"
+                                                    class="form-control" value="{{Overview[2][2]}}"  name="name" readonly></td>
+                                            <td *ngIf="editFlag">
+                                                <select class="browser-default custom-select"
+                                                    [(ngModel)]="selectedResultValue" style="font-size: 15px;width: 310px;height: 25px;padding-top: 0px;padding-bottom: 1px;">
+                                                    <option *ngFor="let Result of ResultField">{{Result}}</option>
+                                                </select>
+                                            </td>
+    
+                                            <td> <button type="button" class="btn btn-default btn-sm"
+                                                    style="height: 20px;padding-top: none;"
+                                                    (click)="EditAndSave()"><span
+                                                        class="glyphicon glyphicon-pencil"></span></button></td>
+                                            
+                                            
+                                            
+                                        </tr>
+    
+    
+                                        
+    
+                                        <tr>
+                                            <td><label for="name">Manual State By</label></td>
+    
+                                            <td colspan="4"><label for="name">Manual State Comment</label></td>
+    
+    
+    
+                                        </tr>
+                                        <tr>
+                                            <td *ngIf="!editFlag"><input type="text" style="width: 310px;"
+                                                    class="form-control" value="{{Overview[2][3]}}" name="name" readonly></td>
+                                            <td *ngIf="editFlag"><input type="text" style="width: 310px;"
+                                                    class="form-control" value="{{LoggedInUser}}" name="name"></td>
+    
+                                            <td colspan="4" *ngIf="!editFlag">
+                                                <textarea class="span6" rows="1" cols="51"
+                                                    style="height:40px;" value="{{Overview[2][4]}}" readonly></textarea>
+                                            </td>
+                                            <td *ngIf="editFlag">
+                                                <textarea (input)="tcode=$event.target.value" name="" id="" cols="51"
+                                                    rows="1"></textarea>
+                                            </td>
+                                            <td *ngIf="editFlag">
+                                                <input type="file" id="myFile" style="width:auto" name="file" (change)="fileEvent($event.target.files)">
+                                            </td>
+                                            <td></td>
+                                            <td *ngIf="editFlag"><button mat-raised-button color="primary"
+                                                    (click)="Save()">Save</button></td>
+    
+                                        </tr>
+    
+                                    </table>
+    
+                                </section>
+    
+    
+    
+    
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+        </div>
+    
+            <div class="test-container"
+                *ngIf="[Mandant].toString()=='Repo EAA' || [Mandant].toString()=='Repo CBB' || [Mandant].toString()=='Repo PAG'"
+                style="width:92%;margin-left: 5%;">
+                <div class="Display">
+                    <div>
+                        <div class="panel panel-default" style="position: relative;min-width: 1500px;">
+                            <div class="panel-heading"
+                                style="text-align: center;font-size:12px; width:100%;padding: 0.1px;font-weight: bold">Trade</div>
+                            <div class="panel-body" style="font-size:12px;width: 100%;">
+    
+                                <section>
+                                    <table class="Repo" style="position: relative;">
+    
+                                        <tr>
+                                            <td><label for="name">Trade Id</label></td>
+    
+                                            <td><label for="name">Trader</label></td>
+    
+                                            <td><label for="name">Instrument</label></td>
+    
+                                            <td><label for="name">CounterParty</label></td>
+                                            <td><label for="name">ISIN</label></td>
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][22]}}" name="name"></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][5]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name"></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][2]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][4]}}" name="name"></td>
+    
+                                        </tr>
+    
+    
+                                        <tr>
+                                            
+    
+                                            <td><label for="name">Customer Type</label></td>
+    
+                                            <td><label for="name">Subtype</label></td>
+    
+                                            <td><label for="name">Book</label></td>
+    
+                                            <td><label for="name">Category</label></td>
+    
+                                            <td><label for="name">Trade Time</label></td>
+    
+                                        </tr>
+                                        <tr>
+                                            
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][7]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][1]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+        
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                        value="{{Overview[0][10]}}" name="name" readonly></td>
+    
+    
+                                        </tr>
+    
+    
+                                        <tr>
+                                            
+    
+                                            <td><label for="name">Start Cash</label></td>
+    
+                                            <td><label for="name">Verify Date</label></td>
+    
+                                            <td><label for="name">End Cash</label></td>
+    
+                                            <td><label for="name">Amend Date</label></td>
+    
+                                            <td><label for="name">Notional</label></td>
+    
+                                        </tr>
+                                        <tr>
+                                            
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                    name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][8]}}" name="name" readonly></td>
+    
+                                                    <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+        
+                                                <td><input type="text" style="width: 285px;" class="form-control"
+                                                        value="{{Overview[0][8]}}" name="name" readonly></td>
+        
+                                                <td><input type="text" style="width: 285px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+    
+    
+                                        </tr>
+    
+                                       
+    
+                                        <tr>
+                                            
+    
+                                            <td><label for="name">Currency</label></td>
+    
+                                            <td><label for="name">Start Date</label></td>
+    
+                                            <td><label for="name"></label></td>
+    
+                                            <td><label for="name">End Date</label></td>
+    
+                                            <td><label for="name">Maturity Days</label></td>
+    
+                                        </tr>
+                                        <tr>
+                                         
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][3]}}" name="name" readonly></td>
+    
+                                                    <td><input type="text" style="width: 285px;" class="form-control"
+                                                        value="{{Overview[0][11]}}" name="name" readonly></td>
+        
+                                                <td>
+                                                    <input  type="checkbox" id="checkbox"
+                                                        style="text-align: none;display:inline-block;width: 12px; 
+                                                        height: 12px; " />
+                                                    &nbsp;
+                                                    <label for="checkbox" >Open End</label>
+                                                </td>
+        
+                                                <td><input type="text" style="width: 285px;" class="form-control"
+                                                        value="{{Overview[0][9]}}" name="name" readonly></td>
+        
+                                                <td><input type="text" style="width: 285px;" class="form-control"
+                                                        value="{{Overview[0][10]}}" name="name" readonly></td>
+    
+    
+                                        </tr>
+    
+                                                                         
+    
+    
+                                        <tr>
+                                            <td><label for="name">Traded Underlying Price</label></td>
+    
+                                            <td><label for="name">Theoritical Accrued Interest</label></td>
+    
+                                            <td><label for="name">Repo Market Type</label></td>
+    
+                                            <td><label for="name">Accrued Interest</label></td>
+    
+                                            <td><label for="name">Location</label></td>
+    
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][11]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][7]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][9]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][10]}}" name="name" readonly></td>
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                value="{{Overview[0][21]}}" name="name" readonly></td>
+    
+                                        </tr>
+    
+                                       
+    
+                                        <tr>
+                                            
+    
+                                            <td><label for="name">Local Report</label></td>
+    
+    
+                                        </tr>
+                                        <tr>
+                                           
+    
+                                            <td><input type="text" style="width: 285px;" class="form-control"
+                                                    value="{{Overview[0][0]}}" name="name" readonly></td>
+    
+    
+    
+                                        </tr>
+    
+    
+                                    </table>
+    
+                                </section>
+    
+                            </div>
+    
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="text-align: center;font-size:12px;padding: 0.1px;font-weight: bold">
+                                    Underlying Market data</div>
+                                <div class="panel-body" style="font-size:12px;">
+                                    <section>
+                                        <table class="Repo">
+                                            <tr>
+                                                <td colspan="2"><label for="name">Source</label></td>
+    
+                                                <td colspan="2"><label for="name">Request String</label></td>
+    
+                                                <td colspan="2"><label for="name">Request Data</label></td>
+                                                <td></td>
+    
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2"><input type="text" style="width: 320px;"
+                                                        class="form-control" value="" name="name" readonly></td>
+    
+                                                <td colspan="2"><input type="text" style="width: 320px;"
+                                                        class="form-control" value="" name="name" readonly></td>
+    
+                                                <td colspan="2"><input type="text" style="width: 320px;"
+                                                        class="form-control" value="" name="name" readonly></td>
+                                                <td></td>
+                                            </tr>
+                                           
+    
+                                            <tr>
+                                                <td><label for="name">Time </label></td>
+                                                <td><label for="name">Min Price </label></td>
+                                                <td><label for="name">Max Price </label></td>
+                                                <td><label for="name">Currency</label></td>
+                                                <td><label for="name">Price Difference</label></td>
+                                                <td><label for="name">Price Tolerance</label></td>
+                                                <td><label for="name">Underlying EOD Price</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" style="width: 160px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+                                                <td><input type="text" style="width: 160px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+                                                <td><input type="text" style="width: 160px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+                                                <td><input type="text" style="width: 160px;" class="form-control"
+                                                        value="{{Overview[0][3]}}" name="name" readonly></td>
+                                                <td><input type="text" style="width: 160px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+                                                <td><input type="text" style="width: 160px;" class="form-control" value=""
+                                                        name="name readonly"></td>
+                                                <td><input type="text" style="width: 160px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+                                            </tr>
+    
+    
+                                        </table>
+    
+                                    </section>
+    
+    
+                                </div>
+                            </div>
+    
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="text-align: center;font-size:12px;padding: 0.1px;font-weight: bold">Check
+                                    data</div>
+                                <div class="panel-body" style="font-size:12px;">
+                                    <section>
+                                        <table class="Repo">
+    
+                                            <tr>
+                                                <td><label for="name">BPoint Difference</label></td>
+                                                <td><label for="name">BPoint Tolerance</label></td>
+                                                <td><label for="name">Exchange Rate</label></td>
+                                                <td><label for="name">Market Price</label></td>
+                                                <td><label for="name">Portfolio</label></td>
+                                                <td><label for="name">P&L Effect</label></td>
+                                                <td><label for="name">NPVe</label></td>
+                                                <td><label for="name">Repo Rate/ Fee/ Rate</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" style="width: 160px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+                                                <td><input type="text" style="width: 160px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+                                                <td><input type="text" style="width: 160px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+                                                <td><input type="text" style="width: 160px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+                                                <td><input type="text" style="width: 160px;" class="form-control"
+                                                        value="{{Overview[0][1]}}" name="name" readonly></td>
+                                                <td><input type="text" style="width: 160px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+                                                <td><input type="text" style="width: 160px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+                                                <td><input type="text" style="width: 160px;" class="form-control" value=""
+                                                        name="name" readonly></td>
+                                            </tr>
+    
+    
+                                        </table>
+    
+                                    </section>
+    
+    
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="text-align: center;font-size:12px; padding: 0.1px;font-weight: bold;">Check
+                                    result</div>
+                                <div class="panel-body" style="font-size:12px;">
+                                    <section>
+                                        <table class="Repo">
+                                            <tr>
+                                                <td><label for="name">Automatic</label></td>
+    
+                                                <td><label for="name">Manual</label></td>
+    
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" style="width: 310px;" class="form-control" value="{{Overview[1][0]}}"
+                                                        name="name" readonly></td>
+    
+                                                <td *ngIf="!editFlag"><input type="text" style="width: 310px;"
+                                                        class="form-control" value="{{Overview[1][2]}}" name="name" readonly></td>
+                                                <td *ngIf="editFlag">
+                                                    <select class="browser-default custom-select"
+                                                        [(ngModel)]="selectedResultValue" style="font-size: 15px;width: 310px;height: 25px;padding-top: 0px;padding-bottom: 1px;">
+                                                        <option *ngFor="let Result of ResultField">{{Result}}</option>
+                                                    </select>
+                                                </td>
+    
+                                                <td><button type="button" class="btn btn-default btn-sm"
+                                                        style="height: 20px;padding-top: none;"
+                                                        (click)="EditAndSave()"><span
+                                                            class="glyphicon glyphicon-pencil"></span></button></td>
+                                                <td></td>
+    
+                                            </tr>
+    
+                                            <tr>
+                                                <td><label for="name">Manual State By</label></td>
+    
+                                                <td><label for="name">Manual State Comment</label></td>
+    
+    
+    
+    
+                                            </tr>
+                                            <tr>
+                                                <td *ngIf="!editFlag"><input type="text" style="width: 300px;"
+                                                        class="form-control" value="{{Overview[1][3]}}" name="name" readonly></td>
+                                                <td *ngIf="editFlag"><input type="text" style="width: 300px;"
+                                                        class="form-control" value="{{LoggedInUser}}" name="name" readonly></td>
+                                                <td colspan="4" *ngIf="!editFlag">
+                                                    <textarea class="span6" rows="1" cols="51"
+                                                        style="height:40px;" value='{{Overview[1][4]}}' readonly></textarea>
+                                                </td>
+                                                <td *ngIf="editFlag">
+                                                    <textarea (input)="tcode=$event.target.value" name="" id="" cols="51"
+                                                        rows="1"></textarea>
+                                                </td>
+                                                
+                                                <td *ngIf="editFlag">
+                                                    <input type="file" id="myFile" style="width:auto" name="file" (change)="fileEvent($event.target.files)">
+                                                </td>
+                                                <td></td>
+                                                <td *ngIf="editFlag"><button mat-raised-button color="primary"
+                                                        (click)="Save()">Save</button></td>
+    
+                                            </tr>
+                                        </table>
+    
+                                    </section>
+    
+    
+    
+    
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+    
+        
+    
+    
+    <router-outlet></router-outlet>

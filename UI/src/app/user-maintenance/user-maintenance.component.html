@@ -1,0 +1,21 @@
+<div class="left">
+  <app-sidemenu></app-sidemenu>
+</div>
+
+<p style="margin-left: none;">
+  <app-breadcrumb></app-breadcrumb>
+</p>
+
+<div class="right">
+  <div class="content">
+    <h3>User Maintenance</h3>
+    <h4>Please use one of the following links to configure user rights for the appropriate client:</h4>
+  </div>
+  <mat-card class="example-card">
+    <div *ngFor="let mandant of mandantList">
+      <a [routerLink]="['/UserMaintenance/'+mandant[1]]" routerLinkActive="active">
+        <mat-icon style="font-size:20px;">navigate_next</mat-icon>{{mandant[1]}}
+      </a><br><br>
+    </div>
+  </mat-card>
+  <router-outlet></router-outlet>

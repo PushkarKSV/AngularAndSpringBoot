@@ -1,0 +1,22 @@
+.main {
+    margin-left: 400px; /* Same as the width of the sidenav */
+    font-size: 12px; /* Increased text to enable scrolling */
+    padding: 0px 20px;
+    bottom: 100%;
+  }
+
+  .container-fluid {
+    background: none;
+    position:fixed;
+    bottom: 0rem;
+    right: 1.5rem;
+    z-index: 1;
+    align-items: center;
+  }
+
+  .copyright__text {
+    letter-spacing: 0.1rem;
+    color: rgb(36, 132, 241);
+    font-size: 130%;
+    
+  }

@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//EXOLAB/Castor Mapping DTD Version 1.0//EN"
+	"http://castor.org/mapping.dtd">
+
+<mapping>
+	<description>Description of the mapping</description>
+
+	<field-handler name="pathHandler" class="de.westlb.mgb.server.service.archive.ReportImageFieldHandler">
+      <param name="path" value="./"/>
+   	</field-handler>
+  
+	<class name="de.westlb.mgb.model.impl.EntityImpl" verify-constructable="false" auto-complete="false"/>
+
+	<class name="de.westlb.mgb.model.impl.JobImpl" extends="de.westlb.mgb.model.impl.EntityImpl" auto-complete="true">
+		<!-- Name of the element in XML -->
+	   <map-to xml="job"/>
+		<!-- Don't print the following attributes -->
+	   <field name="cobMonthString" transient="true"/>
+	   <field name="longId2" transient="true"/>
+	   <field name="cobDayString" transient="true"/>
+		<!-- Time fields -->
+		<field name="startBusinessTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="stopBusinessTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="systemTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="startLoadTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="stopLoadTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="startConvertTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="stopConvertTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="trades">
+		  <bind-xml name="trade"/>
+	  </field>
+		<!-- Wouldn't be printed out otherwise -->
+		<field name="sourceSystem">
+		  <bind-xml name="sourceSystem"/>
+	  </field>
+	  
+	</class>
+
+
+	<class name="de.westlb.mgb.model.impl.TradeImpl" extends="de.westlb.mgb.model.impl.EntityImpl" auto-complete="true">
+		<field name="amendedDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="settlementDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="systemDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="tradeDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+	  <field name="book" transient="true"/>
+	  <field name="currentAutoStateHistEntry" transient="true"/>
+	  <field name="currentManualStateHistEntry" transient="true"/>
+	  <field name="currentReclStateHistEntry" transient="true"/>
+	  <field name="externalRequests" transient="true"/>
+	  <field name="reutersRequests" transient="true"/>
+	  <field name="euwaxRequests" transient="true"/>
+	  <field name="bloombergRequests" transient="true"/>
+		<field name="counterparty">
+		  <bind-xml name="counterparty"/>
+	  </field>
+	</class>
+
+	<class name="de.westlb.mgb.model.impl.EquityImpl" extends="de.westlb.mgb.model.impl.TradeImpl" auto-complete="true"/>
+	<class name="de.westlb.mgb.model.impl.PrimeEquityImpl" extends="de.westlb.mgb.model.impl.EquityImpl" auto-complete="true"/>
+
+	<class name="de.westlb.mgb.model.impl.SummitBondImpl" extends="de.westlb.mgb.model.impl.TradeImpl" auto-complete="true">
+		<field name="startDay" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="expireDay" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="instrumentStartDay" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="instrumentExpireDay" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="bloombergInstrument"/>
+	</class>
+
+	<class name="de.westlb.mgb.model.impl.RepoImpl" extends="de.westlb.mgb.model.impl.TradeImpl" auto-complete="true">
+		<field name="startDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="endDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+	</class>
+	<class name="de.westlb.mgb.model.impl.SummitRepoImpl" extends="de.westlb.mgb.model.impl.RepoImpl" auto-complete="true">
+		<field name="doneDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="verifyDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="bloombergInstrument"/>
+		<field name="bondInstrument"/>
+	</class>
+
+	<class name="de.westlb.mgb.model.impl.MoneyMarketImpl" extends="de.westlb.mgb.model.impl.TradeImpl" auto-complete="true">
+		<field name="fxRateDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="netRateDateTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="openingDatetime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="tradeType"/>
+	</class>
+
+	<class name="de.westlb.mgb.model.impl.SummitDerivativeImpl"  extends="de.westlb.mgb.model.impl.TradeImpl" auto-complete="true">
+		<field name="asOfDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="doneDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="verifyDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="cancelDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="termTradeDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="termInputDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="termEffDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+	  <field name="singleAsset" transient="true"/>
+	  <field name="assets"/>
+	</class>
+
+	<class name="de.westlb.mgb.model.impl.AssetImpl" auto-complete="true">
+		<field name="startDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="maturityDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="expiryDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="fixingDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="paymentDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+		<field name="firstCouponDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+	  <field name="trade" transient="true"/>
+	</class>
+
+
+	<class name="de.westlb.mgb.model.impl.TradeHistEntryImpl" extends="de.westlb.mgb.model.impl.EntityImpl" auto-complete="true">
+	   <field name="trade" transient="true"/>
+	   <field name="stateType" transient="true"/>
+	   <field name="creatorsFullname" transient="true"/>
+	   <field name="createdByEmployee"/>
+	   <field name="stateTime" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+	</class>
+	<class name="de.westlb.mgb.model.impl.AutoStateHistEntryImpl" extends="de.westlb.mgb.model.impl.TradeHistEntryImpl" auto-complete="true">
+	   <field name="automaticState"/>
+	</class>	
+	<class name="de.westlb.mgb.model.impl.ManualStateHistEntryImpl" extends="de.westlb.mgb.model.impl.TradeHistEntryImpl" auto-complete="true">
+	   <field name="manualState"/>
+	</class>	
+	<class name="de.westlb.mgb.model.impl.ReclStateHistEntryImpl" extends="de.westlb.mgb.model.impl.TradeHistEntryImpl" auto-complete="true">
+	   <field name="reclamationState"/>
+	</class>	
+
+
+	<class name="de.westlb.mgb.model.impl.StateImpl" extends="de.westlb.mgb.model.impl.EntityImpl" verify-constructable="false" auto-complete="false">
+	   <field name="stateCode"/>
+	   <field name="shortDescription"/>
+	</class>	
+	<class name="de.westlb.mgb.model.impl.AutomaticStateImpl" extends="de.westlb.mgb.model.impl.StateImpl" verify-constructable="false" auto-complete="false"/>
+	<class name="de.westlb.mgb.model.impl.ManualStateImpl" extends="de.westlb.mgb.model.impl.StateImpl" verify-constructable="false" auto-complete="false"/>
+	<class name="de.westlb.mgb.model.impl.ManualSampleStateImpl" extends="de.westlb.mgb.model.impl.StateImpl" verify-constructable="false" auto-complete="false"/>
+	<class name="de.westlb.mgb.model.impl.ReclamationStateImpl" extends="de.westlb.mgb.model.impl.StateImpl" verify-constructable="false" auto-complete="false"/>
+
+
+	<class name="de.westlb.mgb.model.impl.ReportImageImpl" auto-complete="false">
+	   <field name="name" type="string" handler="pathHandler"/>
+	</class>
+
+
+	<class name="de.westlb.mgb.model.impl.RequestImpl" extends="de.westlb.mgb.model.impl.EntityImpl" auto-complete="true">
+	   <field name="trade" transient="true"/>
+	   <field name="requestDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+	</class>
+	<class name="de.westlb.mgb.model.impl.BloombergRequestImpl" extends="de.westlb.mgb.model.impl.RequestImpl" auto-complete="true">
+	   <field name="requestSourceArray" transient="true"/>
+	   <field name="requestSources" transient="true"/>
+	</class>
+	<class name="de.westlb.mgb.model.impl.ReutersRequestImpl" extends="de.westlb.mgb.model.impl.RequestImpl" auto-complete="true"/>
+	<class name="de.westlb.mgb.model.impl.EuwaxRequestImpl" extends="de.westlb.mgb.model.impl.RequestImpl" auto-complete="true"/>
+	<class name="de.westlb.mgb.model.impl.FoRequestImpl" extends="de.westlb.mgb.model.impl.RequestImpl" auto-complete="true"/>
+
+
+	<class name="de.westlb.mgb.model.impl.PriceImpl" extends="de.westlb.mgb.model.impl.EntityImpl" auto-complete="true">
+	   <field name="priceDate" type="string" handler="de.westlb.mgb.server.service.archive.TimeFieldHandler"/>
+	   <field name="source" transient="true"/>
+	</class>
+	<class name="de.westlb.mgb.model.impl.HistoricPriceImpl" extends="de.westlb.mgb.model.impl.PriceImpl" auto-complete="true"/>
+	<class name="de.westlb.mgb.model.impl.IntervalPriceImpl" extends="de.westlb.mgb.model.impl.PriceImpl" auto-complete="true"/>
+
+
+	<class name="de.westlb.mgb.model.impl.InstrumentImpl" extends="de.westlb.mgb.model.impl.EntityImpl" auto-complete="true">
+	   <field name="bloombergRequestSources" transient="true"/>
+	   <field name="bloombergRequestSourceArray" transient="true"/>
+	   <field name="dualControlJobs" transient="true"/>
+	</class>
+	<class name="de.westlb.mgb.model.impl.PriceCheckInstrumentImpl" extends="de.westlb.mgb.model.impl.InstrumentImpl" auto-complete="true"/>
+
+
+	<class name="de.westlb.mgb.model.impl.PriceCheckCategoryImpl" extends="de.westlb.mgb.model.impl.EntityImpl" auto-complete="true"/>
+
+
+	<class name="de.westlb.mgb.model.impl.AddonImpl" extends="de.westlb.mgb.model.impl.EntityImpl" auto-complete="false">
+	   <field name="priceTolerancePercent"/>
+	   <field name="timeToleranceMinutes"/>
+	</class>
+
+
+	<class name="de.westlb.mgb.model.impl.EmployeeImpl" extends="de.westlb.mgb.model.impl.EntityImpl" auto-complete="false">
+	   <field name="firstName"/>
+	   <field name="lastName"/>
+	   <field name="longId"/>
+	</class>
+
+
+	<class name="de.westlb.mgb.model.impl.TraderImpl" extends="de.westlb.mgb.model.impl.EntityImpl" auto-complete="true">
+	   <field name="traderCode" transient="true"/>
+	   <field name="sourceSystem" transient="true"/>
+	</class>
+
+
+	<class name="de.westlb.mgb.model.impl.SourceSystemImpl" extends="de.westlb.mgb.model.impl.EntityImpl" verify-constructable="false" auto-complete="true"/>
+
+
+	<class name="de.westlb.mgb.model.impl.CounterpartyImpl" extends="de.westlb.mgb.model.impl.EntityImpl" verify-constructable="false" auto-complete="false">
+	   <field name="sparkasse"/>
+	</class>
+
+
+	<class name="de.westlb.mgb.model.impl.SungardTradeTypeImpl" extends="de.westlb.mgb.model.impl.EntityImpl" verify-constructable="false" auto-complete="false">
+	   <field name="sungardTradeTypeName"/>
+	</class>
+
+
+	<class name="de.westlb.mgb.model.impl.SparkasseImpl" extends="de.westlb.mgb.model.impl.EntityImpl" auto-complete="false">
+	   <field name="name"/>
+	   <field name="clientNr"/>
+	</class>
+	
+</mapping>

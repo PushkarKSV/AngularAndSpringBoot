@@ -1,0 +1,118 @@
+
+.example-container {
+  width: 100%;
+  height: 90%;
+  margin: 0px;
+  border: 0px solid #555;
+}
+
+  .left { 
+    float:left; 
+   
+    width: 10%;
+    height: 92%;
+} 
+.right{ 
+  float:left;
+    width: 90%;
+    margin-top: 13em;
+    position: relative;
+  } 
+
+  .middle{ 
+    float:left;  
+    width: 100%;
+    top: 0em;
+    margin-top: 0em;
+  } 
+div.routing{
+  
+    color: red;
+  
+}
+
+.e
+{
+   
+    cursor:pointer;
+
+
+}
+
+  
+
+.test-container{
+  margin-left: 9%;
+  margin-bottom: 20px;
+}
+
+
+span{
+	display: inline;
+}
+nav a.active{
+	color:blue;
+	text-align: center;
+}
+
+
+
+
+
+.column {
+	float: left;
+	width: 50%; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+
+    .numberCircle1 {
+    border-radius: 100%;
+    width: 45px;
+    height:45px;
+	padding-left: 0px;
+  padding-top: 6px;
+  text-align: center;
+   
+     background:red;
+     border: 2px solid rgb(235, 10, 10);
+     color: white;
+}
+
+.numberCircle2 {
+  border-radius: 100%;
+  width: 45px;
+  height:45px;
+padding-left: 0px;
+padding-top: 6px;
+text-align: center;
+ 
+  background:red;
+  border: 2px solid rgb(235, 10, 10);
+  color: white;
+    
+}
+
+
+.numberCircle0 {
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+padding-left: 0px;
+padding-top: 6px;
+text-align: center;
+  /* background: #fff;
+  border: 2px solid green;
+  color: green; */
+  background: green;
+  border: 2px solid green;
+  color: white;
+}
+
+  
+  

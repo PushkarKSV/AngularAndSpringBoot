@@ -1,0 +1,23 @@
+.main {
+    margin-top: 5%;
+      margin-left: 20%; /* Same as the width of the sidenav */
+      color: none;
+    }
+
+    div.ex3 {
+      background-color: rgb(245, 240, 240);
+      width: 95%;
+      height: 600px;
+      overflow: auto;
+    }
+    
+    th {
+      height: 20px;
+      text-align: center;
+    }
+
+    table {
+      text-align: center;
+      font-size: 15px;
+      background-color: lightblue;
+    }

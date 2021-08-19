@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.AddonImpl" table="T13_ADDON" lazy="false" batch-size="20">
+    	<cache usage="read-write"/>
+ 		<id name="longId" type="long" column="T13_ID">
+			<generator class="sequence">
+                <param name="sequence">HIB_SEQ</param>			
+			</generator>
+		</id>
+		<many-to-one name="mandant" lazy="proxy" class="de.westlb.mgb.model.impl.MandantImpl">
+			<column name="FK_T13_T09_MANDANT" sql-type="VARCHAR2(3)"/>
+		</many-to-one>
+        <property name="condition" column="T13_CONDITION"/>
+        <property name="comment" column="T13_COMMENT"/>
+        <property name="priceTolerancePercent" column="T13_PRICE_TOLER_PERCENT"/>
+        <property name="timeToleranceMinutes" column="T13_TIME_TOLER_MINUTES"/>       
+        <property name="changedDate" column="T13_CHANGED_DATE"/>
+ 		<property name="changedBy" column="T13_CHANGED_BY" length="10" />  
+		<property name="createdBy" column="T13_CREATED_BY" length="10" /> 
+        <property name="creationDate" column="T13_CREATION_DATE" />
+    </class>
+
+</hibernate-mapping>

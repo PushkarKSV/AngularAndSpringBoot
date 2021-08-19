@@ -1,0 +1,48 @@
+<div class="left" style="display: inline-block;">
+  <app-sidemenu></app-sidemenu>
+</div>
+
+<ul class="breadcrumb" style="margin-left: none">
+  <li style="color:black" ><a routerLink="../" routerLinkActive="active">UserMaintenance</a></li>
+  <li >{{data2}}</li>
+  
+</ul>
+
+
+
+<h3 align=center >User Maintenance Page</h3>
+<h5 align=center>
+  Either add a <a [routerLink]="[Userid+'/NewUser']" (click)="sendMandant()" >new user</a> or click on the edit icon to edit the user data as necessary!
+</h5>
+
+<div class="test-container" style=" height: 75% ;width:82%;display: flex;
+    flex-direction: column;margin-left:15%;font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11px; ">
+  <div style="padding:1px;float:left;">
+    No of Users per page:
+    <select (change)="onPageSizeChanged($event)" id="page-size">
+      <option value="10">10</option>
+      <option value="20" selected="">20</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+      <option value="500">500</option>
+      <option value="1000">1000</option>
+      <option value="2000">2000</option>
+    </select>
+    <span style="padding: 1px;float:right;">
+      User Priviledge details
+    </span>
+  </div>
+    
+  
+
+  <ag-grid-angular #agGrid of mgrid style="width: 100%; height: 100%;" id="myGrid" class="ag-theme-balham"
+    [columnDefs]="columnDefs" [defaultColDef]="defaultColDef" [pagination]="true"
+    [paginationPageSize]="paginationPageSize" [rowData]="rowData" (gridReady)="onGridReady($event)" enableSorting="true"
+    [quickFilterText]="quickSearchValue" [rowData]="rowData" (gridReady)="onGridReady($event)" enableSorting="true"
+    (rowClicked)='onRowClicked($event)'></ag-grid-angular>
+
+</div>
+
+<router-outlet></router-outlet>

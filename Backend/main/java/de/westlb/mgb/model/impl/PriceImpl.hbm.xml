@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="de.westlb.mgb.model.impl.PriceImpl" table="T12_PRICE" lazy="true" batch-size="20">
+		<!--
+    	<cache usage="read-write"/>
+    	-->
+		<id name="longId" type="long" column="T12_ID">
+			<generator class="sequence">
+				<param name="sequence">HIB_SEQ</param>
+			</generator>
+		</id>
+		<discriminator column="T12_TYPE" length="4" />
+		<many-to-one name="mandant" lazy="proxy" class="de.westlb.mgb.model.impl.MandantImpl">
+			<column name="FK_T12_T09_MANDANT" sql-type="VARCHAR2(3)" />
+		</many-to-one>
+       	<property name="priceDate" column="T12_PRICE_DATE" />
+		<property name="changedDate" column="T12_CHANGED_DATE" />
+		<property name="changedBy" column="T12_CHANGED_BY" length="10" />
+		<property name="createdBy" column="T12_CREATED_BY" length="10" />
+		<property name="creationDate" column="T12_CREATION_DATE" />
+
+		<subclass name="de.westlb.mgb.model.impl.HistoricPriceImpl" discriminator-value="HIST" lazy="true" batch-size="20">
+        	<property name="price">
+        		<column name="T12_PRICE"/>
+        	</property>
+		</subclass>
+
+		<subclass name="de.westlb.mgb.model.impl.IntervalPriceImpl" discriminator-value="INTV" lazy="true" batch-size="20">
+        	<property name="priceMax">
+        		<column name="T12_PRICE_MAX"/>
+        	</property>
+        	<property name="priceMin">
+        		<column name="T12_PRICE_MIN"/>
+        	</property>
+		</subclass>
+
+	</class>
+
+</hibernate-mapping>

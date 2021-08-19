@@ -1,0 +1,54 @@
+.main {
+     margin-top: 5%; 
+      margin-left: 20%; /* Same as the width of the sidenav */
+      color: none;
+    }
+
+     div.ex3 {
+       /* background-color: rgb(245, 240, 240);  */
+      width:90%;
+      height: 600px;
+      overflow: auto;
+    }
+    
+    th {
+      height: 20px;
+      text-align: center;
+      background-color:light-blue; 
+      
+    }
+
+    table {
+      text-align: center;
+      font-size: 15px;
+      background-color:light-blue; 
+       width: 100%;
+    } 
+    ul.breadcrumb li+li:before{
+      padding: 8px;
+      color: black;
+      content: "/\00a0";
+    }
+    /* .example-container {
+      display: flex;
+      flex-direction: column;
+      min-width: 300px;
+    }
+
+    .example-header {
+      min-height: 64px;
+      padding: 8px 24px 0;
+    }
+    .mat-form-field {
+      font-size: 14px;
+      width: 50%;
+    }
+    .mat-table {
+      overflow-x: scroll;
+      max-height: 500px;
+    }
+    .mat-header-row {
+      position: sticky;
+      top: 0;
+      background-color: inherit;
+  } */

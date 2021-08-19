@@ -1,0 +1,13 @@
+.left { 
+    float:left; 
+   
+    width: 10%;
+    height: 90%;
+} 
+.right{ 
+    float:left;
+    margin-left: 5%;
+    width: 85%;
+    margin-top: 13em;
+    position: relative;
+  } 

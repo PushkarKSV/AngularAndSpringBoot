@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.MgbConfigurationImpl" table="T42_MGB_CONFIGURATION" lazy="false">
+    	<!--cache usage="read-write"/-->
+		<composite-id name="mgbConfigurationId" class="de.westlb.mgb.model.impl.MgbConfigurationIdImpl" unsaved-value="none">
+	        <key-property name="key" type="string" column="T42_KEY" length="100" />
+			<key-many-to-one name="mandant" lazy="false" class="de.westlb.mgb.model.impl.MandantImpl" column="FK_T42_T09_MANDANT" />
+		</composite-id>
+
+        <property name="value" column="T42_VALUE" length="4000" />
+        <property name="hidden" type="yes_no" column="hidden"/>		
+
+        <property name="changedDate" column="T42_CHANGED_DATE"/>
+ 		<property name="changedBy" column="T42_CHANGED_BY" length="10" />  
+		<property name="createdBy" column="T42_CREATED_BY" length="10" /> 
+        <property name="creationDate" column="T42_CREATION_DATE" />
+    </class>
+
+</hibernate-mapping>
+<!-- parsed in 0ms -->

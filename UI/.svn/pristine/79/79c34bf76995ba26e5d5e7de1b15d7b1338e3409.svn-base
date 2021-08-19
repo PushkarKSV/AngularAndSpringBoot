@@ -1,0 +1,109 @@
+<div class="left" style="display: inline-block;height: 134%;">
+  <app-sidemenu></app-sidemenu>
+</div>
+  
+<div *ngIf="value;else other_content" >
+  <ul class="breadcrumb" style="margin-left: none;">
+    <li style="color:black" ><a routerLink="../../" routerLinkActive="active">UserMaintenance</a></li>
+    <li class="breadcrumb-item"><a [routerLink]="['/UserMaintenance',message]" routerLinkActive="active">{{message}}</a></li>
+    <li>NewUser</li>
+  </ul>
+  
+</div>
+<ng-template #other_content>
+<ul class="breadcrumb" style="margin-left: none;">
+  <li style="color:black" ><a routerLink="../../" routerLinkActive="active">UserMaintenance</a></li>
+  <li class="breadcrumb-item"><a [routerLink]="['/UserMaintenance',message]" routerLinkActive="active">{{message}}</a></li>
+  <li>EditAccess</li>
+</ul>
+</ng-template>
+
+
+
+<div class="content">
+  <h2>User Maintenance</h2>
+  <h4>
+    Please fill out all mandatory fields, check the appropriate roles and 'Submit' the data.
+  </h4>
+</div>
+<br>
+<br>
+
+<form class="example-card" (ngSubmit)="onSubmit()" [formGroup]="userValidations">
+  <mat-card>
+    <mat-form-field appearance="outline">
+      <mat-label>Firstname</mat-label>
+      <input matInput placeholder="Firstname" formControlName="firstname" required value="{{eventdata[0]}}">
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-error *ngIf=" userValidations.get('firstname').hasError('required')">Firstname is <strong>required</strong>
+      </mat-error>
+      <mat-hint>*Required</mat-hint>
+    </mat-form-field>
+    <br><br>
+    <mat-form-field appearance="outline">
+      <mat-label>Lastname</mat-label>
+      <input matInput placeholder="LastName" formControlName="lastname" required value="{{eventdata[1]}}">
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-error *ngIf="userValidations.get('lastname').hasError('required')">Lastname is <strong>required</strong>
+      </mat-error>
+      <mat-hint>*Required</mat-hint>
+    </mat-form-field>
+    <br><br>
+    <mat-form-field appearance="outline">
+      <mat-label>Mandant</mat-label>
+      <input matInput disabled Placeholder="Data" value="{{accessid}}">
+      <mat-icon matSuffix>work</mat-icon>
+    </mat-form-field>
+    <br><br>
+    <mat-form-field appearance="outline">
+      <mat-label>Phone</mat-label>
+      <input matInput placeholder="Phone" value="{{eventdata[3]}}">
+      <mat-icon matSuffix>phone</mat-icon>
+    </mat-form-field>
+    <br><br>
+    <mat-form-field appearance="outline">
+      <mat-label>Email-ID</mat-label>
+      <input matInput placeholder="pat@example.com" formControlName="email" required value="{{eventdata[4]}}">
+      <mat-error *ngIf="userValidations.get('email').hasError('email')">Please verify Email</mat-error>
+      <mat-error *ngIf="userValidations.get('email').hasError('required')">Email is <strong>required</strong>
+      </mat-error>
+      <mat-icon matSuffix>mail</mat-icon>
+    </mat-form-field>
+    <br><br>
+    <mat-form-field appearance="outline">
+      <mat-label>NT-ID</mat-label>
+      <input matInput placeholder="NT-ID" formControlName="nt_id" required value="{{eventdata[5]}}">
+      <mat-error *ngIf="userValidations.get('nt_id').hasError('required')">NT-ID is <strong>required</strong>
+      </mat-error>
+      <mat-icon matSuffix>domain</mat-icon>
+      <mat-hint>*Required</mat-hint>
+    </mat-form-field>
+    <br><br>
+    <mat-checkbox>Trader Role</mat-checkbox><br>
+    <mat-checkbox>Controller Role</mat-checkbox><br>
+    <mat-checkbox>Admin Role</mat-checkbox><br>
+    <mat-checkbox>Systemadmin Role</mat-checkbox><br>
+    <mat-checkbox>Sparkassen Admin Role</mat-checkbox><br>
+    <mat-checkbox>User Maintainance Role</mat-checkbox><br>
+    <mat-checkbox>Reporter Role</mat-checkbox><br>
+    <mat-checkbox>Read Only Role</mat-checkbox>
+    <br>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Report Type</mat-label>
+      <select class="option1" matNativeControl required>
+        <option value=""></option>
+        <option value="Admin">Admin</option>
+        <option value="CBB">CBB</option>
+        <option value="EAA">EAA</option>
+        <option value="PAG">PAG</option>
+      </select>
+    </mat-form-field>
+    <br>
+    <mat-card-actions>
+      <button mat-raised-button color="primary">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button mat-raised-button color="primary">Cancel</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+<router-outlet></router-outlet>

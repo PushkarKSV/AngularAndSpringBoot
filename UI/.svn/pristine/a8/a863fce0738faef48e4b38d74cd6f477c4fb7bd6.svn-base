@@ -1,0 +1,38 @@
+input, label {
+    display:block;
+}
+input{
+    height:20px;
+width: 15px;
+}
+​
+label {
+    font-weight: normal !important;
+}
+.panel {
+    margin: 0 !important; 
+    padding:0 !important;
+}
+​
+.main {
+    margin-left: 10px; /* Same as the width of the sidenav */
+    
+  }
+
+  #customers {
+    overflow: scroll; /* Scrollbar are always visible */
+overflow: auto;   /* Scrollbar is displayed as it's needed */
+    border-collapse: collapse;
+  }
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  #customers tr:nth-child(even){background-color: #F2F2F2;}
+  #customers tr:hover {background-color: #ddd;}
+  #customers th {
+    font-weight: normal;
+    text-align: left;
+    background-color: #F2F2F2;
+    color:light-black;
+  }

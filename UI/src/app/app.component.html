@@ -1,0 +1,47 @@
+<app-error-page *ngIf='userValid'></app-error-page>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+<div *ngIf='userValid1' class="left1" style="display: inline-block;width: 100%;text-align: center;padding-bottom: 5px;">
+  <table>
+    <tr>
+      <td>
+        <div style="display: inline-block;width: 10%;">
+          <img src="assets\IBM_Logo.PNG">
+        </div>
+      </td>
+      <td style="width: 25%;">
+        <div style="display: inline-block;">
+      </div>
+      </td>
+      <td style="width: 100%;">
+        <div style="display: inline-block;width: 75%;">
+          <h3 style="padding-top:0px ;font-weight: bold;"> IBM Risk Financial Services
+          </h3>
+        </div>
+      </td>
+      <td >
+        <a style="color: Black;font-style:normal;font-size:16px;font-weight: bold;"> Help(?)</a>         
+      </td>
+      <td>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </td>
+      <td>
+        <button mat-button [matMenuTriggerFor]="belowMenu2" class="btn btn-lg dropdown-toggle"
+          style="background-color: transparent;">
+          <span class="glyphicon glyphicon-user" style="margin-right: 5px;font-weight: bold;"><span
+              style="margin-left: 10px;">{{UserID}}</span></span></button>
+        <mat-menu #belowMenu2="matMenu" yPosition="below">
+          <button mat-menu-item [routerLink]="['/Profile']" routerLinkActive="active-link">User Profile</button>
+          <button mat-menu-item [routerLink]="['/UserMaintenance']">User Maintenance</button>
+        </mat-menu>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<router-outlet *ngIf='userValid1'></router-outlet>

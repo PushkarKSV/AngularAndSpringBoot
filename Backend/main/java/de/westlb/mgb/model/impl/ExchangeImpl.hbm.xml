@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.ExchangeImpl" table="T03_EXCHANGE" lazy="false">
+    	<cache usage="read-write"/>
+ 		<id name="longId" type="long" column="T03_ID">
+			<generator class="sequence">
+                <param name="sequence">HIB_SEQ</param>			
+			</generator>
+		</id>
+
+		<!-- MB 2004/05/10 do not use lazy attribute, because of problems with the ObjectComparator for the
+		DualControlJob -->
+		<!-- <set name="mappings" inverse="true"  lazy="true" cascade="save-update">
+			<key column="FK_T21_T03_EXCHANGE" />
+			<one-to-many class="de.westlb.mgb.model.impl.ExchangeMappingEntryImpl" />
+		</set> -->
+        <property name="bloombergId" column="T03_BLOOMBERG_ID" length="50"/>
+        <property name="reutersId" column="T03_REUTERS_ID" length="50"/>
+		<many-to-one name="mandant" lazy="proxy" class="de.westlb.mgb.model.impl.MandantImpl">
+			<column name="FK_T03_T09_MANDANT" sql-type="VARCHAR2(3)"/>
+		</many-to-one>
+        <property name="changedDate" column="T03_CHANGED_DATE"/>
+ 		<property name="changedBy" column="T03_CHANGED_BY" length="10"/>
+		<property name="createdBy" column="T03_CREATED_BY" length="10"/>
+        <property name="creationDate" column="T03_CREATION_DATE" />
+    </class>
+
+</hibernate-mapping>

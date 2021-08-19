@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.MandantImpl" table="T09_MANDANT" lazy="false" batch-size="10">
+    	<cache usage="read-write"/>
+    	<id name="code" column="T09_ID" length="3">
+	    	<!-- We are going to assign the id manually -->
+    		<generator class="assigned"></generator>
+    	</id>
+        <property name="name" column="T09_NAME" length="50"/>
+        <property name="enabled" type="yes_no" column="T09_ENABLED"/>		
+        <property name="changedDate" column="T09_CHANGED_DATE"/>
+ 		<property name="changedBy" column="T09_CHANGED_BY" length="10" />  
+		<property name="createdBy" column="T09_CREATED_BY" length="10" /> 
+        <property name="creationDate" column="T09_CREATION_DATE" />
+        <property name="client" column="t09_client" />
+        <property name="productClass" column="t09_product_class" />
+        <property name="locationOverride" column="t09_location_override" />
+        <property name="autoCheck" type="yes_no" column="auto_check"/>		
+		<set name="dualControlJobs" inverse="true" lazy="true">
+			<key column="FK_T16_T09_MANDANT" />
+			<one-to-many class="de.westlb.mgb.model.impl.DualControlJobImpl" />
+		</set>        
+        
+    </class>
+</hibernate-mapping>

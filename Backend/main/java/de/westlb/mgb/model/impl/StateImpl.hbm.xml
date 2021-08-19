@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="de.westlb.mgb.model.impl.StateImpl" table="T10_STATE_CODE" lazy="false" batch-size="20">
+    	<cache usage="read-write"/>
+		<composite-id name="stateId" class="de.westlb.mgb.model.impl.StateIdImpl" unsaved-value="none">
+	        <key-property name="stateCode" type="string" column="T10_STATE_CODE" length="50" />
+			<key-many-to-one name="mandant" lazy="false" class="de.westlb.mgb.model.impl.MandantImpl" column="FK_T10_T09_STATE_MANDANT" />
+		</composite-id>
+		<discriminator column="T10_STATE_TYPE" type="string" length="20" />
+
+        <property name="shortDescription" column="T10_SHORT_DESCRIPTION" length="40"/>
+        <property name="longDescription" column="T10_LONG_DESCRIPTION" length="200"/>
+        <property name="comment" column="T10_COMMENT" length="1000"/>
+        <property name="finalState" type="yes_no" column="T10_IS_FINAL_STATE"/>
+        <property name="enabled" type="yes_no" column="T10_ENABLED"/>
+        <property name="changedDate" column="T10_CHANGED_DATE"/>
+ 		<property name="changedBy" column="T10_CHANGED_BY" length="10"/>
+		<property name="createdBy" column="T10_CREATED_BY" length="10"/>
+        <property name="creationDate" column="T10_CREATION_DATE" />
+        <property name="stateCode" column="T10_STATE_CODE" update="false" insert="false"/>
+
+		<subclass name="de.westlb.mgb.model.impl.AutomaticStateImpl" lazy="false" discriminator-value="auto" batch-size="20">
+        	<property name="isManualCheckRequired" type="yes_no" column="T10_IS_MANUAL_CHECK_REQUIRED"/>
+        	<property name="isMccChecked" type="yes_no" column="T10_IS_MCC_CHECKED"/>
+	        <property name="marketDataRequestType" column="T10_MARKET_DATA_REQUEST_TYPE" length="20" />
+	        <property name="samplePercentage" column="T10_SAMPLE_PERCENTAGE"/>
+			<many-to-one name="sampleState" lazy="proxy" class="de.westlb.mgb.model.impl.ManualSampleStateImpl">
+				<column name="FK_T10_T10_SAMPLE_STATE_CODE" sql-type="VARCHAR2(50)"/>
+				<column name="FK_T10_T10_SAMPLE_MANDANT_CODE" sql-type="VARCHAR2(3)"/>
+			</many-to-one>
+		</subclass>
+
+		<subclass name="de.westlb.mgb.model.impl.AbstractManualState" lazy="false" >
+			<subclass name="de.westlb.mgb.model.impl.ManualStateImpl" lazy="false" discriminator-value="manual" batch-size="20">
+	        	<property name="isReclamationRequired" type="yes_no" column="T10_IS_RECLAMATION_REQUIRED"/>
+				<many-to-one name="reclamationState" lazy="proxy" class="de.westlb.mgb.model.impl.ReclamationStateImpl">
+					<column name="FK_T10_T10_RECL_STATE_CODE" sql-type="VARCHAR2(50)"/>
+					<column name="FK_T10_T10_RECL_MANDANT_CODE" sql-type="VARCHAR2(3)"/>
+				</many-to-one>
+			</subclass>
+			<subclass name="de.westlb.mgb.model.impl.ManualSampleStateImpl" lazy="false" discriminator-value="sample" >
+			</subclass>
+		</subclass>
+
+		<subclass name="de.westlb.mgb.model.impl.ReclamationStateImpl" lazy="false" discriminator-value="reclamation" batch-size="20">
+		</subclass>
+
+    </class>
+</hibernate-mapping>
